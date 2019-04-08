@@ -35,7 +35,7 @@
             this.BtnClientList = new System.Windows.Forms.Button();
             this.BtnOrderList = new System.Windows.Forms.Button();
             this.BtnDiskList = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.BtnCreateReport = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             // 
             // BtnNewOrder
@@ -100,14 +100,14 @@
             this.BtnDiskList.Text = "Список дисков";
             this.BtnDiskList.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // BtnCreateReport
             // 
-            this.button5.Location = new System.Drawing.Point(27, 138);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(109, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.BtnCreateReport.Location = new System.Drawing.Point(27, 452);
+            this.BtnCreateReport.Name = "BtnCreateReport";
+            this.BtnCreateReport.Size = new System.Drawing.Size(152, 23);
+            this.BtnCreateReport.TabIndex = 5;
+            this.BtnCreateReport.Text = "Создать отчет по работе";
+            this.BtnCreateReport.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -122,7 +122,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 487);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.BtnCreateReport);
             this.Controls.Add(this.BtnDiskList);
             this.Controls.Add(this.BtnOrderList);
             this.Controls.Add(this.BtnClientList);
@@ -147,7 +147,7 @@
         private System.Windows.Forms.Button BtnClientList;
         private System.Windows.Forms.Button BtnOrderList;
         private System.Windows.Forms.Button BtnDiskList;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button BtnCreateReport;
         private System.Windows.Forms.Panel panel1;
     }
 }
