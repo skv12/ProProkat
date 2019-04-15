@@ -6,3 +6,4 @@ https://dotnet.microsoft.com/download/thank-you/net461-developer-pack
   -Entity Framework 6.0
   -MySql.Data
   -MySql.Entity
+  Сандал лох
