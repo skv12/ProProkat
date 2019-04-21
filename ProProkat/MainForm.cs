@@ -16,5 +16,55 @@ namespace ProProkat
         {
             InitializeComponent();
         }
+        private Form use_form;
+        private void BtnClientList_Click(object sender, EventArgs e)
+        {
+            this.panel.Controls.Clear();
+
+            if (use_form != null)
+            {
+                use_form.Close();
+            }
+            use_form = new ClientsSubForm();
+            use_form.TopLevel = false;
+            use_form.Dock = DockStyle.Fill;
+            this.panel.Controls.Add(use_form);
+            use_form.Show();
+        }
+
+        private void BtnOrderList_Click(object sender, EventArgs e)
+        {
+            this.panel.Controls.Clear();
+
+            if (use_form != null)
+            {
+                use_form.Close();
+            }
+            use_form = new OrdersSubForm();
+            use_form.TopLevel = false;
+            use_form.Dock = DockStyle.Fill;
+            this.panel.Controls.Add(use_form);
+            use_form.Show();
+        }
+
+        private void BtnDiskList_Click(object sender, EventArgs e)
+        {
+            this.panel.Controls.Clear();
+
+            if (use_form != null)
+            {
+                use_form.Close();
+            }
+            use_form = new DisksSubForm();
+            use_form.TopLevel = false;
+            use_form.Dock = DockStyle.Fill;
+            this.panel.Controls.Add(use_form);
+            use_form.Show();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

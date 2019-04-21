@@ -82,7 +82,19 @@
     <Compile Include="clients.cs">
       <DependentUpon>pp_model.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClientsSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientsSubForm.Designer.cs">
+      <DependentUpon>ClientsSubForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DbConfiguration.cs" />
+    <Compile Include="DisksSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisksSubForm.Designer.cs">
+      <DependentUpon>DisksSubForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,12 @@
     </Compile>
     <Compile Include="orders.cs">
       <DependentUpon>pp_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdersSubForm.Designer.cs">
+      <DependentUpon>OrdersSubForm.cs</DependentUpon>
     </Compile>
     <Compile Include="pp_model.Context.cs">
       <AutoGen>True</AutoGen>
@@ -112,8 +130,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClientsSubForm.resx">
+      <DependentUpon>ClientsSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisksSubForm.resx">
+      <DependentUpon>DisksSubForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdersSubForm.resx">
+      <DependentUpon>OrdersSubForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -13,7 +13,7 @@ namespace ProProkat
  ***********************************************************************/
 
 
-    public class Clients
+   /* public class Clients
     {
         public System.Collections.ArrayList orders;
 
@@ -68,5 +68,5 @@ namespace ProProkat
         private String regulardebtor;
         private bool blackliststatus;
 
-    }
+    }*/
 }

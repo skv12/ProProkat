@@ -106,9 +106,6 @@
                 <ScalarProperty Name="contact" ColumnName="contact" />
                 <ScalarProperty Name="blackliststatus" ColumnName="blackliststatus" />
               </MappingFragment>
-              <MappingFragment StoreEntitySet="orders" >
-              </MappingFragment>
-              <MappingFragment StoreEntitySet="movies" />
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="movies">
@@ -138,8 +135,6 @@
                 <ScalarProperty Name="disklist" ColumnName="disklist" />
                 <ScalarProperty Name="deposit" ColumnName="deposit" />
               </MappingFragment>
-              <MappingFragment StoreEntitySet="movies" />
-              <MappingFragment StoreEntitySet="clients" />
             </EntityTypeMapping>
           </EntitySetMapping>
         </EntityContainerMapping>

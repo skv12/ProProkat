@@ -36,7 +36,7 @@
             this.BtnOrderList = new System.Windows.Forms.Button();
             this.BtnDiskList = new System.Windows.Forms.Button();
             this.BtnCreateReport = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,8 +61,9 @@
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // BtnNewOrder
             // 
@@ -81,6 +82,7 @@
             this.BtnClientList.TabIndex = 2;
             this.BtnClientList.Text = "Список клиентов";
             this.BtnClientList.UseVisualStyleBackColor = true;
+            this.BtnClientList.Click += new System.EventHandler(this.BtnClientList_Click);
             // 
             // BtnOrderList
             // 
@@ -90,6 +92,7 @@
             this.BtnOrderList.TabIndex = 3;
             this.BtnOrderList.Text = "Список заказов";
             this.BtnOrderList.UseVisualStyleBackColor = true;
+            this.BtnOrderList.Click += new System.EventHandler(this.BtnOrderList_Click);
             // 
             // BtnDiskList
             // 
@@ -99,6 +102,7 @@
             this.BtnDiskList.TabIndex = 4;
             this.BtnDiskList.Text = "Список дисков";
             this.BtnDiskList.UseVisualStyleBackColor = true;
+            this.BtnDiskList.Click += new System.EventHandler(this.BtnDiskList_Click);
             // 
             // BtnCreateReport
             // 
@@ -109,19 +113,19 @@
             this.BtnCreateReport.Text = "Создать отчет по работе";
             this.BtnCreateReport.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panel
             // 
-            this.panel1.Location = new System.Drawing.Point(157, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(631, 410);
-            this.panel1.TabIndex = 6;
+            this.panel.Location = new System.Drawing.Point(157, 28);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(631, 410);
+            this.panel.TabIndex = 6;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 487);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.BtnCreateReport);
             this.Controls.Add(this.BtnDiskList);
             this.Controls.Add(this.BtnOrderList);
@@ -148,7 +152,7 @@
         private System.Windows.Forms.Button BtnOrderList;
         private System.Windows.Forms.Button BtnDiskList;
         private System.Windows.Forms.Button BtnCreateReport;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel;
     }
 }
 
