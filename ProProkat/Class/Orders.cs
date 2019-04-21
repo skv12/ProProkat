@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProProkat
+/*namespace ProProkat
 {
     /***********************************************************************
  * Module:  orders.cs
  * Author:  B
  * Purpose: Definition of the Class orders
- ***********************************************************************/
+ **********************************************************************
 
 
     public class orders 
@@ -69,4 +69,4 @@ namespace ProProkat
         private String deposit { get; set; }
 
     }
-}
+}*/

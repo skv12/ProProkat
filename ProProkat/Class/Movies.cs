@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 
-namespace ProProkat
+/*namespace ProProkat
 {
     /***********************************************************************
  * Module:  movies.cs
  * Author:  Student
  * Purpose: Definition of the Class movies
- ***********************************************************************/
+ **********************************************************************
 
     public class movies
     {
@@ -231,4 +231,4 @@ namespace ProProkat
         private String synopsis{get; set;}
 
     }
-}
+}*/

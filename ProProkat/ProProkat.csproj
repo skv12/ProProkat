@@ -45,8 +45,8 @@
     <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.15\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.Entity.6.10.8\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.15\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
@@ -56,6 +56,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
@@ -78,12 +79,36 @@
     <Compile Include="Class\Movies.cs" />
     <Compile Include="Class\Orders.cs" />
     <Compile Include="Class\Scenarist.cs" />
+    <Compile Include="clients.cs">
+      <DependentUpon>pp_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="DbConfiguration.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="movies.cs">
+      <DependentUpon>pp_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="orders.cs">
+      <DependentUpon>pp_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pp_model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pp_model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pp_model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pp_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pp_model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pp_model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +125,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <EntityDeploy Include="pp_model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>pp_model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="pp_model.edmx.diagram">
+      <DependentUpon>pp_model.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,7 +143,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pp_model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>pp_model.Context.cs</LastGenOutput>
+      <DependentUpon>pp_model.edmx</DependentUpon>
+    </Content>
+    <Content Include="pp_model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>pp_model.edmx</DependentUpon>
+      <LastGenOutput>pp_model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
