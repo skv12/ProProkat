@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище pp_dbModel" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище pp_dbModel" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="clients">
           <Key>
             <PropertyRef Name="fullname" />
@@ -24,11 +24,9 @@
           <Property Name="synopsis" Type="varchar" MaxLength="100" />
           <Property Name="agerating" Type="varchar" MaxLength="10" />
           <Property Name="genres" Type="varchar" MaxLength="60" />
-          <Property Name="year" Type="date" />
+          <Property Name="year" Type="varchar" MaxLength="4" />
           <Property Name="director" Type="varchar" MaxLength="60" />
-          <Property Name="scenarist" Type="varchar" MaxLength="60" />
           <Property Name="country" Type="varchar" MaxLength="60" />
-          <Property Name="actors" Type="varchar" MaxLength="60" />
         </EntityType>
         <EntityType Name="orders">
           <Key>
@@ -46,8 +44,7 @@
           <EntitySet Name="movies" EntityType="Self.movies" Schema="pp_db" store:Type="Tables" />
           <EntitySet Name="orders" EntityType="Self.orders" Schema="pp_db" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="pp_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -70,11 +67,9 @@
           <Property Name="synopsis" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="agerating" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="genres" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="year" Type="DateTime" />
+          <Property Name="year" Type="String" ConcurrencyMode="None" />
           <Property Name="director" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="scenarist" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <Property Name="country" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="actors" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="orders">
           <Key>
@@ -108,23 +103,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="movies">
-            <EntityTypeMapping TypeName="pp_dbModel.movies">
-              <MappingFragment StoreEntitySet="movies">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="count" ColumnName="count" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="synopsis" ColumnName="synopsis" />
-                <ScalarProperty Name="agerating" ColumnName="agerating" />
-                <ScalarProperty Name="genres" ColumnName="genres" />
-                <ScalarProperty Name="year" ColumnName="year" />
-                <ScalarProperty Name="director" ColumnName="director" />
-                <ScalarProperty Name="scenarist" ColumnName="scenarist" />
-                <ScalarProperty Name="country" ColumnName="country" />
-                <ScalarProperty Name="actors" ColumnName="actors" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="orders">
             <EntityTypeMapping TypeName="pp_dbModel.orders">
               <MappingFragment StoreEntitySet="orders">
@@ -134,6 +112,21 @@
                 <ScalarProperty Name="rent" ColumnName="rent" />
                 <ScalarProperty Name="disklist" ColumnName="disklist" />
                 <ScalarProperty Name="deposit" ColumnName="deposit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="movies">
+            <EntityTypeMapping TypeName="IsTypeOf(pp_dbModel.movies)">
+              <MappingFragment StoreEntitySet="movies">
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="director" ColumnName="director" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="genres" ColumnName="genres" />
+                <ScalarProperty Name="agerating" ColumnName="agerating" />
+                <ScalarProperty Name="synopsis" ColumnName="synopsis" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

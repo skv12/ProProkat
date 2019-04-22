@@ -46,7 +46,7 @@
             this.главнаяToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,13 +61,13 @@
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // BtnNewOrder
             // 
-            this.BtnNewOrder.Location = new System.Drawing.Point(661, 452);
+            this.BtnNewOrder.Location = new System.Drawing.Point(790, 513);
             this.BtnNewOrder.Name = "BtnNewOrder";
             this.BtnNewOrder.Size = new System.Drawing.Size(127, 23);
             this.BtnNewOrder.TabIndex = 1;
@@ -106,7 +106,7 @@
             // 
             // BtnCreateReport
             // 
-            this.BtnCreateReport.Location = new System.Drawing.Point(27, 452);
+            this.BtnCreateReport.Location = new System.Drawing.Point(27, 513);
             this.BtnCreateReport.Name = "BtnCreateReport";
             this.BtnCreateReport.Size = new System.Drawing.Size(152, 23);
             this.BtnCreateReport.TabIndex = 5;
@@ -117,14 +117,14 @@
             // 
             this.panel.Location = new System.Drawing.Point(157, 28);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(631, 410);
+            this.panel.Size = new System.Drawing.Size(775, 479);
             this.panel.TabIndex = 6;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 487);
+            this.ClientSize = new System.Drawing.Size(944, 552);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.BtnCreateReport);
             this.Controls.Add(this.BtnDiskList);

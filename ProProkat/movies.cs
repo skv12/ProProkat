@@ -20,10 +20,8 @@ namespace ProProkat
         public string synopsis { get; set; }
         public string agerating { get; set; }
         public string genres { get; set; }
-        public Nullable<System.DateTime> year { get; set; }
+        public string year { get; set; }
         public string director { get; set; }
-        public string scenarist { get; set; }
         public string country { get; set; }
-        public string actors { get; set; }
     }
 }

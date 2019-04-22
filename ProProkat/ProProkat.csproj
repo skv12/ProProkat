@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDiskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDiskForm.Designer.cs">
+      <DependentUpon>AddDiskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\Actors.cs" />
     <Compile Include="Class\CD.cs" />
     <Compile Include="Class\Clients.cs" />
@@ -130,6 +136,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddDiskForm.resx">
+      <DependentUpon>AddDiskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientsSubForm.resx">
       <DependentUpon>ClientsSubForm.cs</DependentUpon>
     </EmbeddedResource>
