@@ -16,8 +16,9 @@
         </EntityType>
         <EntityType Name="movies">
           <Key>
-            <PropertyRef Name="name" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="count" Type="int" Nullable="false" />
           <Property Name="price" Type="int" Nullable="false" />
@@ -59,7 +60,7 @@
         </EntityType>
         <EntityType Name="movies">
           <Key>
-            <PropertyRef Name="name" />
+            <PropertyRef Name="Id" />
           </Key>
           <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="count" Type="Int32" Nullable="false" />
@@ -70,6 +71,7 @@
           <Property Name="year" Type="String" ConcurrencyMode="None" />
           <Property Name="director" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <Property Name="country" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="orders">
           <Key>
@@ -118,6 +120,7 @@
           <EntitySetMapping Name="movies">
             <EntityTypeMapping TypeName="IsTypeOf(pp_dbModel.movies)">
               <MappingFragment StoreEntitySet="movies">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="country" ColumnName="country" />
                 <ScalarProperty Name="director" ColumnName="director" />
                 <ScalarProperty Name="year" ColumnName="year" />

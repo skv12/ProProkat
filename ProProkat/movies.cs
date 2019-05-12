@@ -23,5 +23,6 @@ namespace ProProkat
         public string year { get; set; }
         public string director { get; set; }
         public string country { get; set; }
+        public int Id { get; set; }
     }
 }

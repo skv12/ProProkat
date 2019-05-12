@@ -232,6 +232,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddDiskForm";
             this.Text = "Добавление диска";
+            this.Load += new System.EventHandler(this.AddDiskForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,24 +240,24 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtboxPrice;
-        private System.Windows.Forms.Label lblDiskPrice;
-        private System.Windows.Forms.Label lblCountDisk;
-        private System.Windows.Forms.Label lblNameDisk;
-        private System.Windows.Forms.TextBox txtboxCount;
-        private System.Windows.Forms.TextBox txtboxName;
-        private System.Windows.Forms.TextBox txtboxGenre;
-        private System.Windows.Forms.Label lblSynopsis;
-        private System.Windows.Forms.Label lblGenre;
-        private System.Windows.Forms.Label lblDirector;
-        private System.Windows.Forms.Label lblYear;
-        private System.Windows.Forms.Label lblAgeRating;
-        private System.Windows.Forms.RichTextBox rTxtBoxSynopsis;
-        private System.Windows.Forms.TextBox txtboxDirector;
-        private System.Windows.Forms.TextBox txtboxYear;
-        private System.Windows.Forms.TextBox txtboxAgeRating;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtboxCountry;
-        private System.Windows.Forms.Label lblCountry;
+        public System.Windows.Forms.TextBox txtboxPrice;
+        public System.Windows.Forms.Label lblDiskPrice;
+        public System.Windows.Forms.Label lblCountDisk;
+        public System.Windows.Forms.Label lblNameDisk;
+        public System.Windows.Forms.TextBox txtboxCount;
+        public System.Windows.Forms.TextBox txtboxName;
+        public System.Windows.Forms.TextBox txtboxGenre;
+        public System.Windows.Forms.Label lblSynopsis;
+        public System.Windows.Forms.Label lblGenre;
+        public System.Windows.Forms.Label lblDirector;
+        public System.Windows.Forms.Label lblYear;
+        public System.Windows.Forms.Label lblAgeRating;
+        public System.Windows.Forms.RichTextBox rTxtBoxSynopsis;
+        public System.Windows.Forms.TextBox txtboxDirector;
+        public System.Windows.Forms.TextBox txtboxYear;
+        public System.Windows.Forms.TextBox txtboxAgeRating;
+        public System.Windows.Forms.Button btnAdd;
+        public System.Windows.Forms.TextBox txtboxCountry;
+        public System.Windows.Forms.Label lblCountry;
     }
 }
