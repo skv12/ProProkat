@@ -15,6 +15,8 @@ namespace ProProkat
 {
     public partial class AddDiskForm : Form
     {
+
+        public string name2;
         public bool add_or_edit = false;
         public AddDiskForm()
         {
@@ -40,14 +42,25 @@ namespace ProProkat
                 };
                 try
                 {
-                    if (add_or_edit)
+                    if (!add_or_edit)
                     {
                         db.movies.Add(mv);
                         db.SaveChanges();
                     }
                     else
                     {
-                        db.Entry<movies>(mv).State = System.Data.Entity.EntityState.Modified;
+
+                        movies mv2 = db.movies.Where(c => c.name == name2).FirstOrDefault();
+                        mv2.name = txtboxName.Text;
+                        mv2.synopsis = rTxtBoxSynopsis.Text;
+                        mv2.genres = txtboxGenre.Text;
+                        mv2.director = txtboxDirector.Text;
+                        mv2.year = txtboxYear.Text;
+                        mv2.agerating = txtboxAgeRating.Text;
+                        mv2.country = txtboxCountry.Text;
+                        mv2.price = Convert.ToInt32(txtboxPrice.Text);
+                        mv2.count = Convert.ToInt32(txtboxCount.Text);
+                        db.Entry(mv2).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
                     }
                 }
@@ -67,6 +80,7 @@ namespace ProProkat
         {
             if (txtboxName.Text != "")
             {
+                name2 = txtboxName.Text;
                 add_or_edit = true;
                 btnAdd.Text = "Редакт.";
                 this.Text = "Редактирование диска";

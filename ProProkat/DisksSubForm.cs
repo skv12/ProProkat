@@ -72,6 +72,7 @@ namespace ProProkat
             edit_form.txtboxPrice.Text = Convert.ToString(mv.price);
             edit_form.txtboxCount.Text = Convert.ToString(mv.count);
             edit_form.ShowDialog();
+            zapis();
         }
     }
 }

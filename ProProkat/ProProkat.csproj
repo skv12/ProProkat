@@ -96,6 +96,12 @@
       <DependentUpon>ClientsSubForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DbConfiguration.cs" />
+    <Compile Include="DiskSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiskSearch.Designer.cs">
+      <DependentUpon>DiskSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="DisksSubForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientsSubForm.resx">
       <DependentUpon>ClientsSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiskSearch.resx">
+      <DependentUpon>DiskSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DisksSubForm.resx">
       <DependentUpon>DisksSubForm.cs</DependentUpon>
