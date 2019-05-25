@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Хранилище pp_dbModel" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="agerating">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
         <EntityType Name="clients">
           <Key>
             <PropertyRef Name="id" />
@@ -14,6 +21,20 @@
           <Property Name="address" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="contact" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="blackliststatus" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="genres">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="45" Nullable="false" />
         </EntityType>
         <EntityType Name="movies">
           <Key>
@@ -43,7 +64,10 @@
           <Property Name="deposit" Type="varchar" MaxLength="60" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Хранилище pp_dbModelContainer">
+          <EntitySet Name="agerating" EntityType="Self.agerating" Schema="pp_db" store:Type="Tables" />
           <EntitySet Name="clients" EntityType="Self.clients" Schema="pp_db" store:Type="Tables" />
+          <EntitySet Name="country" EntityType="Self.country" Schema="pp_db" store:Type="Tables" />
+          <EntitySet Name="genres" EntityType="Self.genres" Schema="pp_db" store:Type="Tables" />
           <EntitySet Name="movies" EntityType="Self.movies" Schema="pp_db" store:Type="Tables" />
           <EntitySet Name="orders" EntityType="Self.orders" Schema="pp_db" store:Type="Tables" />
         </EntityContainer>
@@ -92,32 +116,32 @@
           <EntitySet Name="clients" EntityType="Self.clients" />
           <EntitySet Name="movies" EntityType="Self.movies" />
           <EntitySet Name="orders" EntityType="Self.orders" />
-          <EntitySet Name="genresSet" EntityType="pp_dbModel.genres" />
-          <EntitySet Name="countrySet" EntityType="pp_dbModel.country" />
-          <EntitySet Name="ageratingSet" EntityType="pp_dbModel.agerating" />
-        </EntityContainer>
-        <EntityType Name="genres">
+          <EntitySet Name="agerating" EntityType="pp_dbModel.agerating" />
+          <EntitySet Name="country" EntityType="pp_dbModel.country" />
+          <EntitySet Name="genres" EntityType="pp_dbModel.genres" />
+          </EntityContainer>
+        <EntityType Name="agerating">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="country">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="agerating">
+        <EntityType Name="genres">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -160,6 +184,30 @@
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="count" ColumnName="count" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="agerating">
+            <EntityTypeMapping TypeName="pp_dbModel.agerating">
+              <MappingFragment StoreEntitySet="agerating">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="country">
+            <EntityTypeMapping TypeName="pp_dbModel.country">
+              <MappingFragment StoreEntitySet="country">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="genres">
+            <EntityTypeMapping TypeName="pp_dbModel.genres">
+              <MappingFragment StoreEntitySet="genres">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

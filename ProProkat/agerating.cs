@@ -14,7 +14,7 @@ namespace ProProkat
     
     public partial class agerating
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
     }
 }

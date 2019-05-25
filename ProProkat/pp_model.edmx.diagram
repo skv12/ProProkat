@@ -8,10 +8,10 @@
         <EntityTypeShape EntityType="pp_dbModel.clients" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="pp_dbModel.movies" Width="1.5" PointX="2.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="pp_dbModel.orders" Width="1.5" PointX="4.375" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pp_dbModel.genres" Width="1.5" PointX="6.5" PointY="0.625" />
-        <EntityTypeShape EntityType="pp_dbModel.country" Width="1.5" PointX="8.375" PointY="0.75" />
-        <EntityTypeShape EntityType="pp_dbModel.agerating" Width="1.5" PointX="10.25" PointY="0.75" />
-      </Diagram>
+        <EntityTypeShape EntityType="pp_dbModel.agerating" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="pp_dbModel.country" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="pp_dbModel.genres" Width="1.5" PointX="4.75" PointY="4.75" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
