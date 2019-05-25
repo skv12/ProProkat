@@ -20,5 +20,6 @@ namespace ProProkat
         public System.DateTime rent { get; set; }
         public string disklist { get; set; }
         public string deposit { get; set; }
+        public int id { get; set; }
     }
 }

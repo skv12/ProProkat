@@ -12,12 +12,9 @@ namespace ProProkat
     using System;
     using System.Collections.Generic;
     
-    public partial class clients
+    public partial class agerating
     {
-        public string fullname { get; set; }
-        public string address { get; set; }
-        public string contact { get; set; }
-        public sbyte blackliststatus { get; set; }
-        public int id { get; set; }
+        public int Id { get; set; }
+        public string name { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\sanda\Source\Repos\skv12\ProProkat\ProProkat\pp_model.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\sanda\source\repos\skv12\ProProkat\ProProkat\pp_model.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

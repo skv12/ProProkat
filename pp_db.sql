@@ -23,12 +23,13 @@ DROP TABLE IF EXISTS `clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `clients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fullname` varchar(60) NOT NULL,
   `address` varchar(60) NOT NULL,
   `contact` varchar(20) NOT NULL,
   `blackliststatus` tinyint(4) NOT NULL,
-  PRIMARY KEY (`fullname`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +38,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
+INSERT INTO `clients` VALUES (2,'wqer','wert','23',0),(4,'1','1','1',1);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,7 +70,7 @@ CREATE TABLE `movies` (
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
-INSERT INTO `movies` VALUES (6,'Kesha23',3,1000,'123','123','123','123','123','123'),(7,'Dima',21,12,'','','','','',''),(8,'sandal',123,123,'123','123','123','123','123','123'),(12,'124',124,123,'123','123','123','123','123','123'),(13,'111',1,1,'','','','','',''),(14,'Boris',11,11,'','','','','',''),(15,'11s',11,11,'','','','','',''),(16,'11asd',11,11,'','','','','',''),(17,'11sss',11,11,'','','','','','');
+INSERT INTO `movies` VALUES (6,'Kesha231',3,1000,'123','123','123','123','123','123'),(7,'Dima',21,12,'','','','','',''),(8,'sandal',123,123,'123','123','123','123','123','123'),(12,'125',124,123,'123','123','123','123','123','123'),(15,'11s',11,11,'','','','','',''),(16,'11asd',11,11,'','','','','',''),(17,'11sss',11,11,'','','','','','');
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,13 +82,14 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `client` varchar(60) NOT NULL,
   `status` varchar(60) NOT NULL,
   `date` date NOT NULL,
   `rent` date NOT NULL,
-  `disklist` varchar(60) NOT NULL,
+  `disklist` varchar(255) NOT NULL,
   `deposit` varchar(60) NOT NULL,
-  PRIMARY KEY (`client`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -108,4 +111,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-19  2:05:22
+-- Dump completed on 2019-05-25 23:02:10

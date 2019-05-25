@@ -20,7 +20,6 @@ namespace ProProkat
         public bool add_or_edit = false;
         public AddDiskForm()
         {
-            
             InitializeComponent();
         }
 

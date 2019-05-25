@@ -73,6 +73,7 @@
             this.BtnNewOrder.TabIndex = 1;
             this.BtnNewOrder.Text = "Новый заказ";
             this.BtnNewOrder.UseVisualStyleBackColor = true;
+            this.BtnNewOrder.Click += new System.EventHandler(this.BtnNewOrder_Click);
             // 
             // BtnClientList
             // 

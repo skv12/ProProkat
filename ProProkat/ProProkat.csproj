@@ -71,11 +71,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClientForm.Designer.cs">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDiskForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddDiskForm.Designer.cs">
       <DependentUpon>AddDiskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrderForm.Designer.cs">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="agerating.cs">
+      <DependentUpon>pp_model.tt</DependentUpon>
     </Compile>
     <Compile Include="Class\Actors.cs" />
     <Compile Include="Class\CD.cs" />
@@ -95,6 +110,9 @@
     <Compile Include="ClientsSubForm.Designer.cs">
       <DependentUpon>ClientsSubForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="country.cs">
+      <DependentUpon>pp_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="DbConfiguration.cs" />
     <Compile Include="DiskSearch.cs">
       <SubType>Form</SubType>
@@ -107,6 +125,9 @@
     </Compile>
     <Compile Include="DisksSubForm.Designer.cs">
       <DependentUpon>DisksSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="genres.cs">
+      <DependentUpon>pp_model.tt</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -143,8 +164,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddClientForm.resx">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDiskForm.resx">
       <DependentUpon>AddDiskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddOrderForm.resx">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClientsSubForm.resx">
       <DependentUpon>ClientsSubForm.cs</DependentUpon>

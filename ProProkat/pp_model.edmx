@@ -7,8 +7,9 @@
     <Schema Namespace="Хранилище pp_dbModel" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="clients">
           <Key>
-            <PropertyRef Name="fullname" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fullname" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="address" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="contact" Type="varchar" MaxLength="20" Nullable="false" />
@@ -31,13 +32,14 @@
         </EntityType>
         <EntityType Name="orders">
           <Key>
-            <PropertyRef Name="client" />
+            <PropertyRef Name="id" />
           </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="client" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
           <Property Name="rent" Type="date" Nullable="false" />
-          <Property Name="disklist" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="disklist" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="deposit" Type="varchar" MaxLength="60" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Хранилище pp_dbModelContainer">
@@ -51,12 +53,13 @@
       <Schema Namespace="pp_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="clients">
           <Key>
-            <PropertyRef Name="fullname" />
+            <PropertyRef Name="id" />
           </Key>
           <Property Name="fullname" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="address" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="contact" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="blackliststatus" Type="SByte" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="movies">
           <Key>
@@ -75,7 +78,7 @@
         </EntityType>
         <EntityType Name="orders">
           <Key>
-            <PropertyRef Name="client" />
+            <PropertyRef Name="id" />
           </Key>
           <Property Name="client" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
@@ -83,12 +86,37 @@
           <Property Name="rent" Type="DateTime" Nullable="false" />
           <Property Name="disklist" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="deposit" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="pp_dbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="clients" EntityType="Self.clients" />
           <EntitySet Name="movies" EntityType="Self.movies" />
           <EntitySet Name="orders" EntityType="Self.orders" />
+          <EntitySet Name="genresSet" EntityType="pp_dbModel.genres" />
+          <EntitySet Name="countrySet" EntityType="pp_dbModel.country" />
+          <EntitySet Name="ageratingSet" EntityType="pp_dbModel.agerating" />
         </EntityContainer>
+        <EntityType Name="genres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="agerating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -98,6 +126,7 @@
           <EntitySetMapping Name="clients">
             <EntityTypeMapping TypeName="pp_dbModel.clients">
               <MappingFragment StoreEntitySet="clients">
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fullname" ColumnName="fullname" />
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="contact" ColumnName="contact" />
@@ -108,6 +137,7 @@
           <EntitySetMapping Name="orders">
             <EntityTypeMapping TypeName="pp_dbModel.orders">
               <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="client" ColumnName="client" />
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="date" ColumnName="date" />

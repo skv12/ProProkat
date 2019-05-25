@@ -28,5 +28,8 @@ namespace ProProkat
         public virtual DbSet<clients> clients { get; set; }
         public virtual DbSet<movies> movies { get; set; }
         public virtual DbSet<orders> orders { get; set; }
+        public virtual DbSet<genres> genresSet { get; set; }
+        public virtual DbSet<country> countrySet { get; set; }
+        public virtual DbSet<agerating> ageratingSet { get; set; }
     }
 }

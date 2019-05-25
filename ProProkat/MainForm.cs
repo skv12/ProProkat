@@ -66,5 +66,11 @@ namespace ProProkat
         {
             this.Close();
         }
+
+        private void BtnNewOrder_Click(object sender, EventArgs e)
+        {
+            Form add_form = new AddOrderForm();
+            add_form.ShowDialog();
+        }
     }
 }
