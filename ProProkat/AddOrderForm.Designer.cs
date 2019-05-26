@@ -51,13 +51,14 @@
             // 
             // cmbxClient
             // 
-            this.cmbxClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxClient.FormattingEnabled = true;
             this.cmbxClient.Location = new System.Drawing.Point(113, 363);
             this.cmbxClient.Name = "cmbxClient";
             this.cmbxClient.Size = new System.Drawing.Size(148, 21);
             this.cmbxClient.TabIndex = 0;
             this.cmbxClient.SelectedIndexChanged += new System.EventHandler(this.cmbxClient_SelectedIndexChanged);
+            this.cmbxClient.Click += new System.EventHandler(this.cmbxClient_Click);
+            this.cmbxClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxClient_KeyPress);
             // 
             // chkNewClient
             // 
@@ -97,12 +98,13 @@
             // 
             // cmbxDisk
             // 
-            this.cmbxDisk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxDisk.FormattingEnabled = true;
             this.cmbxDisk.Location = new System.Drawing.Point(113, 407);
             this.cmbxDisk.Name = "cmbxDisk";
             this.cmbxDisk.Size = new System.Drawing.Size(148, 21);
             this.cmbxDisk.TabIndex = 5;
+            this.cmbxDisk.Click += new System.EventHandler(this.cmbxDisk_Click);
+            this.cmbxDisk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxDisk_KeyPress);
             // 
             // btnAddDisk
             // 

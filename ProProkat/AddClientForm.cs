@@ -62,10 +62,9 @@ namespace ProProkat
                     return;
                 }
             }
-
-           
+            AddOrderForm aof = new AddOrderForm();
+            aof.fillchkbox();
             this.Close();
-
         }
         private void AddClientForm_Load(object sender, EventArgs e)
         {
