@@ -18,7 +18,7 @@ namespace ProProkat
         {
             InitializeComponent();
         }
-
+        
         private void btnAdd_Click(object sender, EventArgs e)
         {
             using (pp_dbEntities db = new pp_dbEntities())
@@ -62,9 +62,12 @@ namespace ProProkat
                     return;
                 }
             }
+
+           
             this.Close();
+
         }
-        private void AddDiskForm_Load(object sender, EventArgs e)
+        private void AddClientForm_Load(object sender, EventArgs e)
         {
             if (txtBoxname.Text != "")
             {
@@ -72,6 +75,7 @@ namespace ProProkat
                 add_or_edit = true;
                 btnAdd.Text = "Редакт.";
                 this.Text = "Редактирование клиента";
+
             }
         }
     }

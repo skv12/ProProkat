@@ -59,6 +59,7 @@ namespace ProProkat
                         mv2.country = txtboxCountry.Text;
                         mv2.price = Convert.ToInt32(txtboxPrice.Text);
                         mv2.count = Convert.ToInt32(txtboxCount.Text);
+
                         db.Entry(mv2).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
                     }

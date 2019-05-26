@@ -24,7 +24,8 @@ namespace ProProkat
             dataGridView1.Columns[0].HeaderText = "Название";
             dataGridView1.Columns[1].HeaderText = "Количество";
             dataGridView1.Columns[2].HeaderText = "Цена";
-            for (int i = 3; i <= 9; i++) { dataGridView1.Columns[i].Visible = false; }
+            for (int i = 3; i <= 9; i++)
+                dataGridView1.Columns[i].Visible = false;
         }
 
 
@@ -61,6 +62,7 @@ namespace ProProkat
             pp_dbEntities db = new pp_dbEntities();
             int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[9].Value.ToString());
             movies mv = db.movies.Find(id);
+
             AddDiskForm edit_form = new AddDiskForm();
             edit_form.txtboxName.Text = mv.name;
             edit_form.rTxtBoxSynopsis.Text = mv.synopsis;
@@ -71,6 +73,7 @@ namespace ProProkat
             edit_form.txtboxCountry.Text = mv.country;
             edit_form.txtboxPrice.Text = Convert.ToString(mv.price);
             edit_form.txtboxCount.Text = Convert.ToString(mv.count);
+
             edit_form.ShowDialog();
             zapis();
         }

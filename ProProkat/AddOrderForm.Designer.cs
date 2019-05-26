@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbxClient = new System.Windows.Forms.ComboBox();
             this.chkNewClient = new System.Windows.Forms.CheckBox();
             this.panel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbxDisk = new System.Windows.Forms.ComboBox();
             this.btnAddDisk = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtboxDiskCount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtboxRent = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,15 +44,20 @@
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblDeposit = new System.Windows.Forms.Label();
+            this.lblcontact = new System.Windows.Forms.Label();
+            this.lblbl = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmbxClient
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 363);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(148, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cmbxClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxClient.FormattingEnabled = true;
+            this.cmbxClient.Location = new System.Drawing.Point(113, 363);
+            this.cmbxClient.Name = "cmbxClient";
+            this.cmbxClient.Size = new System.Drawing.Size(148, 21);
+            this.cmbxClient.TabIndex = 0;
+            this.cmbxClient.SelectedIndexChanged += new System.EventHandler(this.cmbxClient_SelectedIndexChanged);
             // 
             // chkNewClient
             // 
@@ -90,13 +95,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Диски";
             // 
-            // comboBox2
+            // cmbxDisk
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(113, 407);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(148, 21);
-            this.comboBox2.TabIndex = 5;
+            this.cmbxDisk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxDisk.FormattingEnabled = true;
+            this.cmbxDisk.Location = new System.Drawing.Point(113, 407);
+            this.cmbxDisk.Name = "cmbxDisk";
+            this.cmbxDisk.Size = new System.Drawing.Size(148, 21);
+            this.cmbxDisk.TabIndex = 5;
             // 
             // btnAddDisk
             // 
@@ -106,13 +112,14 @@
             this.btnAddDisk.TabIndex = 6;
             this.btnAddDisk.Text = "Добавить";
             this.btnAddDisk.UseVisualStyleBackColor = true;
+            this.btnAddDisk.Click += new System.EventHandler(this.btnAddDisk_Click);
             // 
-            // textBox1
+            // txtboxDiskCount
             // 
-            this.textBox1.Location = new System.Drawing.Point(349, 407);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtboxDiskCount.Location = new System.Drawing.Point(349, 407);
+            this.txtboxDiskCount.Name = "txtboxDiskCount";
+            this.txtboxDiskCount.Size = new System.Drawing.Size(100, 20);
+            this.txtboxDiskCount.TabIndex = 7;
             // 
             // label3
             // 
@@ -182,11 +189,42 @@
             this.lblDeposit.Size = new System.Drawing.Size(0, 13);
             this.lblDeposit.TabIndex = 15;
             // 
+            // lblcontact
+            // 
+            this.lblcontact.AutoSize = true;
+            this.lblcontact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblcontact.Location = new System.Drawing.Point(433, 371);
+            this.lblcontact.Name = "lblcontact";
+            this.lblcontact.Size = new System.Drawing.Size(0, 16);
+            this.lblcontact.TabIndex = 16;
+            // 
+            // lblbl
+            // 
+            this.lblbl.AutoSize = true;
+            this.lblbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblbl.Location = new System.Drawing.Point(488, 557);
+            this.lblbl.Name = "lblbl";
+            this.lblbl.Size = new System.Drawing.Size(0, 20);
+            this.lblbl.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(277, 368);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(150, 16);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Контактный телефон:";
+            // 
             // AddOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblbl);
+            this.Controls.Add(this.lblcontact);
             this.Controls.Add(this.lblDeposit);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAddOrder);
@@ -195,14 +233,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtboxRent);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtboxDiskCount);
             this.Controls.Add(this.btnAddDisk);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbxDisk);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.chkNewClient);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbxClient);
             this.Name = "AddOrderForm";
             this.Text = "AddOrderForm";
             this.ResumeLayout(false);
@@ -212,21 +250,24 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.CheckBox chkNewClient;
-        private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button btnAddDisk;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtboxRent;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.Button btnAddOrder;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblDeposit;
+        public System.Windows.Forms.ComboBox cmbxClient;
+        public System.Windows.Forms.CheckBox chkNewClient;
+        public System.Windows.Forms.Panel panel;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ComboBox cmbxDisk;
+        public System.Windows.Forms.Button btnAddDisk;
+        public System.Windows.Forms.TextBox txtboxDiskCount;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtboxRent;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label lblPrice;
+        public System.Windows.Forms.Button btnAddOrder;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label lblDeposit;
+        public System.Windows.Forms.Label lblcontact;
+        public System.Windows.Forms.Label lblbl;
+        public System.Windows.Forms.Label label7;
     }
 }

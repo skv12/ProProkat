@@ -47,6 +47,9 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtboxCountry = new System.Windows.Forms.TextBox();
             this.lblCountry = new System.Windows.Forms.Label();
+            this.cmbxGenre = new System.Windows.Forms.ComboBox();
+            this.cmbxCounrty = new System.Windows.Forms.ComboBox();
+            this.cmbxAgerating = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtboxPrice
@@ -126,7 +129,7 @@
             // lblDirector
             // 
             this.lblDirector.AutoSize = true;
-            this.lblDirector.Location = new System.Drawing.Point(24, 233);
+            this.lblDirector.Location = new System.Drawing.Point(24, 308);
             this.lblDirector.Name = "lblDirector";
             this.lblDirector.Size = new System.Drawing.Size(58, 13);
             this.lblDirector.TabIndex = 10;
@@ -135,7 +138,7 @@
             // lblYear
             // 
             this.lblYear.AutoSize = true;
-            this.lblYear.Location = new System.Drawing.Point(24, 263);
+            this.lblYear.Location = new System.Drawing.Point(24, 282);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(71, 13);
             this.lblYear.TabIndex = 11;
@@ -144,7 +147,7 @@
             // lblAgeRating
             // 
             this.lblAgeRating.AutoSize = true;
-            this.lblAgeRating.Location = new System.Drawing.Point(24, 293);
+            this.lblAgeRating.Location = new System.Drawing.Point(24, 256);
             this.lblAgeRating.Name = "lblAgeRating";
             this.lblAgeRating.Size = new System.Drawing.Size(78, 13);
             this.lblAgeRating.TabIndex = 12;
@@ -160,21 +163,21 @@
             // 
             // txtboxDirector
             // 
-            this.txtboxDirector.Location = new System.Drawing.Point(111, 230);
+            this.txtboxDirector.Location = new System.Drawing.Point(111, 305);
             this.txtboxDirector.Name = "txtboxDirector";
             this.txtboxDirector.Size = new System.Drawing.Size(100, 20);
             this.txtboxDirector.TabIndex = 15;
             // 
             // txtboxYear
             // 
-            this.txtboxYear.Location = new System.Drawing.Point(111, 260);
+            this.txtboxYear.Location = new System.Drawing.Point(111, 279);
             this.txtboxYear.Name = "txtboxYear";
             this.txtboxYear.Size = new System.Drawing.Size(100, 20);
             this.txtboxYear.TabIndex = 16;
             // 
             // txtboxAgeRating
             // 
-            this.txtboxAgeRating.Location = new System.Drawing.Point(111, 290);
+            this.txtboxAgeRating.Location = new System.Drawing.Point(111, 253);
             this.txtboxAgeRating.Name = "txtboxAgeRating";
             this.txtboxAgeRating.Size = new System.Drawing.Size(100, 20);
             this.txtboxAgeRating.TabIndex = 17;
@@ -191,7 +194,7 @@
             // 
             // txtboxCountry
             // 
-            this.txtboxCountry.Location = new System.Drawing.Point(111, 316);
+            this.txtboxCountry.Location = new System.Drawing.Point(111, 227);
             this.txtboxCountry.Name = "txtboxCountry";
             this.txtboxCountry.Size = new System.Drawing.Size(100, 20);
             this.txtboxCountry.TabIndex = 20;
@@ -199,17 +202,44 @@
             // lblCountry
             // 
             this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(24, 319);
+            this.lblCountry.Location = new System.Drawing.Point(24, 230);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(43, 13);
             this.lblCountry.TabIndex = 19;
             this.lblCountry.Text = "Страна";
+            // 
+            // cmbxGenre
+            // 
+            this.cmbxGenre.FormattingEnabled = true;
+            this.cmbxGenre.Location = new System.Drawing.Point(217, 200);
+            this.cmbxGenre.Name = "cmbxGenre";
+            this.cmbxGenre.Size = new System.Drawing.Size(121, 21);
+            this.cmbxGenre.TabIndex = 21;
+            // 
+            // cmbxCounrty
+            // 
+            this.cmbxCounrty.FormattingEnabled = true;
+            this.cmbxCounrty.Location = new System.Drawing.Point(217, 226);
+            this.cmbxCounrty.Name = "cmbxCounrty";
+            this.cmbxCounrty.Size = new System.Drawing.Size(121, 21);
+            this.cmbxCounrty.TabIndex = 22;
+            // 
+            // cmbxAgerating
+            // 
+            this.cmbxAgerating.FormattingEnabled = true;
+            this.cmbxAgerating.Location = new System.Drawing.Point(217, 253);
+            this.cmbxAgerating.Name = "cmbxAgerating";
+            this.cmbxAgerating.Size = new System.Drawing.Size(121, 21);
+            this.cmbxAgerating.TabIndex = 23;
             // 
             // AddDiskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 366);
+            this.Controls.Add(this.cmbxAgerating);
+            this.Controls.Add(this.cmbxCounrty);
+            this.Controls.Add(this.cmbxGenre);
             this.Controls.Add(this.txtboxCountry);
             this.Controls.Add(this.lblCountry);
             this.Controls.Add(this.btnAdd);
@@ -259,5 +289,8 @@
         public System.Windows.Forms.Button btnAdd;
         public System.Windows.Forms.TextBox txtboxCountry;
         public System.Windows.Forms.Label lblCountry;
+        private System.Windows.Forms.ComboBox cmbxGenre;
+        private System.Windows.Forms.ComboBox cmbxCounrty;
+        private System.Windows.Forms.ComboBox cmbxAgerating;
     }
 }

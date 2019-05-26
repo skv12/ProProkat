@@ -46,6 +46,7 @@ namespace ProProkat
             pp_dbEntities db = new pp_dbEntities();
             int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
             clients cl = db.clients.Find(id);
+
             AddClientForm edit_form = new AddClientForm();
             edit_form.txtBoxname.Text = cl.fullname;
             edit_form.txtboxAddress.Text = cl.address;
@@ -53,7 +54,7 @@ namespace ProProkat
             if (cl.blackliststatus == 1)
                 edit_form.chkbxBL.Checked = true;
             else
-                edit_form.chkbxBL.Checked = true;
+                edit_form.chkbxBL.Checked = false;
 
            
             edit_form.ShowDialog();
