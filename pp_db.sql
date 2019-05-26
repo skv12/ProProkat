@@ -52,7 +52,7 @@ CREATE TABLE `clients` (
   `contact` varchar(20) NOT NULL,
   `blackliststatus` tinyint(4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,7 +61,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (2,'wqer','wert','23',0),(4,'1','1','1',1);
+INSERT INTO `clients` VALUES (7,'Дьяконов Аркадий','Общага','89141111111',0),(9,'Огр','Болото','89140000000',1),(14,'Жирков Александр','ДСК 1','89242222222',1),(16,'Дьяконов Аркадий','Марха','89643333333',1),(17,'Захаров Борис','Авторынок','89148289050',0),(18,'Винокуров Сандал','Общага','89244444444',0),(22,'Зверьков Денис','Марха','89146666666',0),(23,'Дима','Общага','442013',1),(24,'Деулина Марина','Жатай','89447777777',0),(25,'Пирожков Александр','Сунтар','89118888888',1),(26,'Фёдорова Саша','Манньыаттаах','89649999999',0),(27,'Шамаев Semen','Якутск','444444',0);
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,7 +130,7 @@ CREATE TABLE `movies` (
   `director` varchar(60) DEFAULT NULL,
   `country` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,7 +139,7 @@ CREATE TABLE `movies` (
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
-INSERT INTO `movies` VALUES (6,'Kesha231',3,1000,'123','123','123','123','123','123'),(7,'Dima',21,12,'','','','','',''),(8,'sandal',123,123,'123','123','123','123','123','123'),(12,'125',124,123,'123','123','123','123','123','123'),(15,'11s',11,11,'','','','','',''),(16,'11asd',11,11,'','','','','',''),(17,'11sss',11,11,'','','','','','');
+INSERT INTO `movies` VALUES (18,'Шрек',1,1,'','','','','',''),(19,'Спасатели Малибу',95,100,'','','','','',''),(20,'Дракула',4,5,'','','','','',''),(21,'Терминатор',3,3,'3','','','','','');
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-26  0:04:30
+-- Dump completed on 2019-05-26 23:13:26
