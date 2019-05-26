@@ -148,6 +148,6 @@
         public System.Windows.Forms.TextBox txtBoxname;
         public System.Windows.Forms.TextBox txtboxphone;
         public System.Windows.Forms.TextBox txtboxAddress;
-        public System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

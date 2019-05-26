@@ -26,12 +26,11 @@ namespace ProProkat
         public void ClientForm() // Форма с добавление клиентов
         {
             this.panel.Controls.Clear();
-            AddClientForm form_activated = new AddClientForm();
+            form_activated = new AddClientForm();
             form_activated.FormBorderStyle = 0;
             form_activated.TopLevel = false;
             form_activated.Dock = DockStyle.Fill;
             this.panel.Controls.Add(form_activated);
-            form_activated.chkModal = true;
             form_activated.Show();
             this.panel.Enabled = false;
         }
