@@ -21,12 +21,15 @@ namespace ProProkat
         public AddDiskForm()
         {
             InitializeComponent();
+            fillchkbox();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             using (pp_dbEntities db = new pp_dbEntities())
             {
+
                 movies mv = new movies
                 {
                     name = txtboxName.Text,
@@ -48,7 +51,6 @@ namespace ProProkat
                     }
                     else
                     {
-
                         movies mv2 = db.movies.Where(c => c.name == name2).FirstOrDefault();
                         mv2.name = txtboxName.Text;
                         mv2.synopsis = rTxtBoxSynopsis.Text;
@@ -85,6 +87,118 @@ namespace ProProkat
                 btnAdd.Text = "Редакт.";
                 this.Text = "Редактирование диска";
             }
+        }
+
+        private void btnAddData_Click(object sender, EventArgs e)
+        {
+            pp_dbEntities db = new pp_dbEntities();
+            if (txtboxGenre.Text != "")
+            {
+                genres gr = new genres
+                {
+                    name = txtboxGenre.Text
+                };
+                db.genres.Add(gr);
+                db.SaveChanges();
+            }
+            if (txtboxCountry.Text != "")
+            {
+                country cr = new country
+                {
+                    name = txtboxCountry.Text
+                };
+                db.country.Add(cr);
+                db.SaveChanges();
+            }
+            if (txtboxAgeRating.Text != "")
+            {
+                agerating ar = new agerating
+                {
+                    name = txtboxAgeRating.Text
+                };
+                db.agerating.Add(ar);
+                db.SaveChanges();
+            }
+            fillchkbox();
+            txtboxAgeRating.Text = "";
+            txtboxCountry.Text = "";
+            txtboxGenre.Text = "";
+        }
+
+        public void fillchkbox() // Заполнение комбобокса данными из базы данных
+        {
+            pp_dbEntities db = new pp_dbEntities();
+            cmbxGenre.DataSource = db.genres.ToList<genres>();
+            cmbxGenre.ValueMember = "Id";
+            cmbxGenre.DisplayMember = "name";
+            
+            cmbxAgerating.DataSource = db.agerating.ToList<agerating>();
+            cmbxAgerating.ValueMember = "Id";
+            cmbxAgerating.DisplayMember = "name";
+
+            cmbxCounrty.DataSource = db.country.ToList<country>();
+            cmbxCounrty.ValueMember = "Id";
+            cmbxCounrty.DisplayMember = "name";
+        }
+
+        private void cmbxGenre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+            if ((char.IsControl(e.KeyChar)))
+                return;
+            string Str = ((ComboBox)(sender)).Text.Substring(0, ((ComboBox)(sender)).SelectionStart) + e.KeyChar;
+            int Index = ((ComboBox)(sender)).FindStringExact(Str);
+            if (Index == -1)
+                Index = ((ComboBox)(sender)).FindString(Str);
+            ((ComboBox)sender).SelectedIndex = Index;
+            ((ComboBox)(sender)).SelectionStart = Str.Length;
+            ((ComboBox)(sender)).SelectionLength = ((ComboBox)(sender)).Text.Length - ((ComboBox)(sender)).SelectionStart;
+            e.Handled = true;
+        }
+
+        private void cmbxCounrty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+            if ((char.IsControl(e.KeyChar)))
+                return;
+            string Str = ((ComboBox)(sender)).Text.Substring(0, ((ComboBox)(sender)).SelectionStart) + e.KeyChar;
+            int Index = ((ComboBox)(sender)).FindStringExact(Str);
+            if (Index == -1)
+                Index = ((ComboBox)(sender)).FindString(Str);
+            ((ComboBox)sender).SelectedIndex = Index;
+            ((ComboBox)(sender)).SelectionStart = Str.Length;
+            ((ComboBox)(sender)).SelectionLength = ((ComboBox)(sender)).Text.Length - ((ComboBox)(sender)).SelectionStart;
+            e.Handled = true;
+        }
+
+        private void cmbxAgerating_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+            if ((char.IsControl(e.KeyChar)))
+                return;
+            string Str = ((ComboBox)(sender)).Text.Substring(0, ((ComboBox)(sender)).SelectionStart) + e.KeyChar;
+            int Index = ((ComboBox)(sender)).FindStringExact(Str);
+            if (Index == -1)
+                Index = ((ComboBox)(sender)).FindString(Str);
+            ((ComboBox)sender).SelectedIndex = Index;
+            ((ComboBox)(sender)).SelectionStart = Str.Length;
+            ((ComboBox)(sender)).SelectionLength = ((ComboBox)(sender)).Text.Length - ((ComboBox)(sender)).SelectionStart;
+            e.Handled = true;
+        }
+
+        private void cmbxGenre_Click(object sender, EventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+        }
+
+        private void cmbxCounrty_Click(object sender, EventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+        }
+
+        private void cmbxAgerating_Click(object sender, EventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
         }
     }
 }

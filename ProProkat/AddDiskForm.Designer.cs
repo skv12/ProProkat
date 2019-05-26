@@ -34,7 +34,6 @@
             this.lblNameDisk = new System.Windows.Forms.Label();
             this.txtboxCount = new System.Windows.Forms.TextBox();
             this.txtboxName = new System.Windows.Forms.TextBox();
-            this.txtboxGenre = new System.Windows.Forms.TextBox();
             this.lblSynopsis = new System.Windows.Forms.Label();
             this.lblGenre = new System.Windows.Forms.Label();
             this.lblDirector = new System.Windows.Forms.Label();
@@ -43,13 +42,18 @@
             this.rTxtBoxSynopsis = new System.Windows.Forms.RichTextBox();
             this.txtboxDirector = new System.Windows.Forms.TextBox();
             this.txtboxYear = new System.Windows.Forms.TextBox();
-            this.txtboxAgeRating = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtboxCountry = new System.Windows.Forms.TextBox();
             this.lblCountry = new System.Windows.Forms.Label();
             this.cmbxGenre = new System.Windows.Forms.ComboBox();
             this.cmbxCounrty = new System.Windows.Forms.ComboBox();
             this.cmbxAgerating = new System.Windows.Forms.ComboBox();
+            this.btnAddData = new System.Windows.Forms.Button();
+            this.txtboxGenre = new System.Windows.Forms.TextBox();
+            this.txtboxAgeRating = new System.Windows.Forms.TextBox();
+            this.txtboxCountry = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtboxPrice
@@ -100,13 +104,6 @@
             this.txtboxName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtboxName.Size = new System.Drawing.Size(213, 20);
             this.txtboxName.TabIndex = 5;
-            // 
-            // txtboxGenre
-            // 
-            this.txtboxGenre.Location = new System.Drawing.Point(111, 201);
-            this.txtboxGenre.Name = "txtboxGenre";
-            this.txtboxGenre.Size = new System.Drawing.Size(100, 20);
-            this.txtboxGenre.TabIndex = 7;
             // 
             // lblSynopsis
             // 
@@ -175,13 +172,6 @@
             this.txtboxYear.Size = new System.Drawing.Size(100, 20);
             this.txtboxYear.TabIndex = 16;
             // 
-            // txtboxAgeRating
-            // 
-            this.txtboxAgeRating.Location = new System.Drawing.Point(111, 253);
-            this.txtboxAgeRating.Name = "txtboxAgeRating";
-            this.txtboxAgeRating.Size = new System.Drawing.Size(100, 20);
-            this.txtboxAgeRating.TabIndex = 17;
-            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(330, 312);
@@ -191,13 +181,6 @@
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // txtboxCountry
-            // 
-            this.txtboxCountry.Location = new System.Drawing.Point(111, 227);
-            this.txtboxCountry.Name = "txtboxCountry";
-            this.txtboxCountry.Size = new System.Drawing.Size(100, 20);
-            this.txtboxCountry.TabIndex = 20;
             // 
             // lblCountry
             // 
@@ -211,32 +194,100 @@
             // cmbxGenre
             // 
             this.cmbxGenre.FormattingEnabled = true;
-            this.cmbxGenre.Location = new System.Drawing.Point(217, 200);
+            this.cmbxGenre.Location = new System.Drawing.Point(111, 199);
             this.cmbxGenre.Name = "cmbxGenre";
             this.cmbxGenre.Size = new System.Drawing.Size(121, 21);
             this.cmbxGenre.TabIndex = 21;
+            this.cmbxGenre.Click += new System.EventHandler(this.cmbxGenre_Click);
+            this.cmbxGenre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxGenre_KeyPress);
             // 
             // cmbxCounrty
             // 
             this.cmbxCounrty.FormattingEnabled = true;
-            this.cmbxCounrty.Location = new System.Drawing.Point(217, 226);
+            this.cmbxCounrty.Location = new System.Drawing.Point(111, 225);
             this.cmbxCounrty.Name = "cmbxCounrty";
             this.cmbxCounrty.Size = new System.Drawing.Size(121, 21);
             this.cmbxCounrty.TabIndex = 22;
+            this.cmbxCounrty.Click += new System.EventHandler(this.cmbxCounrty_Click);
+            this.cmbxCounrty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxCounrty_KeyPress);
             // 
             // cmbxAgerating
             // 
             this.cmbxAgerating.FormattingEnabled = true;
-            this.cmbxAgerating.Location = new System.Drawing.Point(217, 253);
+            this.cmbxAgerating.Location = new System.Drawing.Point(111, 252);
             this.cmbxAgerating.Name = "cmbxAgerating";
             this.cmbxAgerating.Size = new System.Drawing.Size(121, 21);
             this.cmbxAgerating.TabIndex = 23;
+            this.cmbxAgerating.Click += new System.EventHandler(this.cmbxAgerating_Click);
+            this.cmbxAgerating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxAgerating_KeyPress);
+            // 
+            // btnAddData
+            // 
+            this.btnAddData.Location = new System.Drawing.Point(517, 144);
+            this.btnAddData.Name = "btnAddData";
+            this.btnAddData.Size = new System.Drawing.Size(166, 45);
+            this.btnAddData.TabIndex = 24;
+            this.btnAddData.Text = "Добавить Жанр/Страну/Рейтинг";
+            this.btnAddData.UseVisualStyleBackColor = true;
+            this.btnAddData.Click += new System.EventHandler(this.btnAddData_Click);
+            // 
+            // txtboxGenre
+            // 
+            this.txtboxGenre.Location = new System.Drawing.Point(597, 66);
+            this.txtboxGenre.Name = "txtboxGenre";
+            this.txtboxGenre.Size = new System.Drawing.Size(100, 20);
+            this.txtboxGenre.TabIndex = 7;
+            // 
+            // txtboxAgeRating
+            // 
+            this.txtboxAgeRating.Location = new System.Drawing.Point(597, 118);
+            this.txtboxAgeRating.Name = "txtboxAgeRating";
+            this.txtboxAgeRating.Size = new System.Drawing.Size(100, 20);
+            this.txtboxAgeRating.TabIndex = 17;
+            // 
+            // txtboxCountry
+            // 
+            this.txtboxCountry.Location = new System.Drawing.Point(597, 92);
+            this.txtboxCountry.Name = "txtboxCountry";
+            this.txtboxCountry.Size = new System.Drawing.Size(100, 20);
+            this.txtboxCountry.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(514, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Страна";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(514, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Возр. рейтинг";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(514, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Жанр";
             // 
             // AddDiskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 366);
+            this.ClientSize = new System.Drawing.Size(714, 351);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnAddData);
             this.Controls.Add(this.cmbxAgerating);
             this.Controls.Add(this.cmbxCounrty);
             this.Controls.Add(this.cmbxGenre);
@@ -276,7 +327,6 @@
         public System.Windows.Forms.Label lblNameDisk;
         public System.Windows.Forms.TextBox txtboxCount;
         public System.Windows.Forms.TextBox txtboxName;
-        public System.Windows.Forms.TextBox txtboxGenre;
         public System.Windows.Forms.Label lblSynopsis;
         public System.Windows.Forms.Label lblGenre;
         public System.Windows.Forms.Label lblDirector;
@@ -285,12 +335,17 @@
         public System.Windows.Forms.RichTextBox rTxtBoxSynopsis;
         public System.Windows.Forms.TextBox txtboxDirector;
         public System.Windows.Forms.TextBox txtboxYear;
-        public System.Windows.Forms.TextBox txtboxAgeRating;
         public System.Windows.Forms.Button btnAdd;
-        public System.Windows.Forms.TextBox txtboxCountry;
         public System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.ComboBox cmbxGenre;
         private System.Windows.Forms.ComboBox cmbxCounrty;
         private System.Windows.Forms.ComboBox cmbxAgerating;
+        private System.Windows.Forms.Button btnAddData;
+        public System.Windows.Forms.TextBox txtboxGenre;
+        public System.Windows.Forms.TextBox txtboxAgeRating;
+        public System.Windows.Forms.TextBox txtboxCountry;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
     }
 }

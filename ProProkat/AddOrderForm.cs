@@ -17,11 +17,7 @@ namespace ProProkat
             InitializeComponent();
             ClientForm();
             fillchkbox();
-            var values = new AutoCompleteStringCollection();
         }
-
-
-
         
         public void ClientForm() // Форма с добавление клиентов
         {
@@ -38,21 +34,20 @@ namespace ProProkat
         }
 
 
-        public void fillchkbox() // Заполнение комбобокса данными из базы данных
+        public void fillchkbox() // Заполнение комбобоксов данными из бд и время.
         {
             pp_dbEntities db = new pp_dbEntities();
             cmbxClient.DataSource = db.clients.ToList<clients>();
             cmbxClient.ValueMember = "Id";
             cmbxClient.DisplayMember = "fullname";
             clientcheck();
-            cmbxClient.Text = "";
-
 
             cmbxDisk.DataSource = db.movies.ToList<movies>();
             cmbxDisk.ValueMember = "Id";
             cmbxDisk.DisplayMember = "name";
 
-            
+ 
+            lblTime.Text = DateTime.Now.ToString("ddd, dd MMM yyy HH’:’mm’:’ss ‘GMT’");
         }
 
 
@@ -88,20 +83,53 @@ namespace ProProkat
             }
         }
 
+        private int[] DiskList = new int[10000];
+        private int[] DiskCount = new int[10000];
+        private int i = 0;
+        private int price = 0;
         public void btnAddDisk_Click(object sender, EventArgs e) // Добавление дисков в заказ
         {
+            //int price = 0;
             pp_dbEntities db = new pp_dbEntities();
             movies mv = db.movies.Where(c => c.name == cmbxDisk.Text).FirstOrDefault();
             int cnt = Convert.ToInt32((txtboxDiskCount.Text));
+
             if (mv.count < cnt)
-                MessageBox.Show("Сейчас доступно только " + mv.count + " дисков.");
+            {
+                lbldskcount.Visible = false;
+                label8.Text = "Закажите не более " + lbldskcount.Text + " дисков"; 
+            }
             else
             {
                 mv.count = mv.count - cnt;
                 db.Entry(mv).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
+                int ID = Convert.ToInt32(cmbxDisk.SelectedValue.ToString());
+                movies dsk = db.movies.Where(c => c.Id == ID).FirstOrDefault();
+                lbldskcount.Text = dsk.count.ToString();
+                lbldskcount.Visible = true;
+                label8.Text = "Дисков в наличии:";
+                bool UsheEst = false;
+                for(int j = 0; j < i; j++)
+                {
+                    if (DiskList[j] == dsk.Id)
+                    {
+                        DiskCount[j] = DiskCount[j] + cnt;
+                        UsheEst = true;
+                        price = price + dsk.price * cnt;
+                        break;
+                    }
+                }
+                if (!UsheEst)
+                {
+                    DiskList[i] = dsk.Id;
+                    DiskCount[i] = cnt;
+                    price = price + dsk.price * cnt;
+                    i++;
+                }
             }
-
+            lblDeposit.Text = price.ToString();
+            lblPrice.Text = (price / 5).ToString();
         }
 
         private void cmbxClient_KeyPress(object sender, KeyPressEventArgs e) // Живой поиск в cmbxClient (нашел в интернете, ниче не понял o_O )
@@ -143,5 +171,85 @@ namespace ProProkat
         {
             ((ComboBox)(sender)).DroppedDown = true;
         }
+
+        private void AddOrderForm_Activated(object sender, EventArgs e) //Обновление combobox'ов при добавлении клиента
+        {
+            fillchkbox();
+            chkNewClient.Checked = false;
+            pp_dbEntities db = new pp_dbEntities();
+            int intIdt = db.clients.Max(u => u.id);  //Поиск клиента с наибольшим ID
+            clients cl = db.clients.Where(c => c.id == intIdt).FirstOrDefault();
+            cmbxClient.Text = cl.fullname.ToString();
+        }
+
+        private void cmbxDisk_SelectedIndexChanged(object sender, EventArgs e) //Показывает кол-во доступных дисков в label'ах, при выборе из combobox'а.
+        {
+            pp_dbEntities db = new pp_dbEntities();
+            int ID = Convert.ToInt32(cmbxDisk.SelectedValue.ToString());
+            movies dsk = db.movies.Where(c => c.Id == ID).FirstOrDefault();
+            lbldskcount.Text = dsk.count.ToString();
+            lbldskcount.Visible = true;
+            label8.Text = "Дисков в наличии:";
+        }
+
+
+
+        public bool add_or_edit = false;
+        private void btnAddOrder_Click(object sender, EventArgs e) // Добавление заказа
+        {
+            using (pp_dbEntities db = new pp_dbEntities())
+            {
+                string SpisokDiskov = "";
+                for (int j = 0; j < i; j++)
+                    SpisokDiskov = SpisokDiskov + DiskList[j].ToString() + " " + DiskCount[j].ToString() + " ";
+                 
+                orders ord = new orders
+                {
+                    client = cmbxClient.Text,
+                    status = "1",
+                    date = DateTime.Now,
+                    rent = DateTime.Now.AddDays(Convert.ToInt32(txtboxRent.Text)),
+                    disklist = SpisokDiskov,
+                    deposit =Convert.ToString(price),
+                };
+                try
+                {
+                    if (!add_or_edit)
+                    {
+                        db.orders.Add(ord);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                       /* movies mv2 = db.movies.Where(c => c.name == name2).FirstOrDefault();
+                        mv2.name = txtboxName.Text;
+                        mv2.synopsis = rTxtBoxSynopsis.Text;
+                        mv2.genres = txtboxGenre.Text;
+                        mv2.director = txtboxDirector.Text;
+                        mv2.year = txtboxYear.Text;
+                        mv2.agerating = txtboxAgeRating.Text;
+                        mv2.country = txtboxCountry.Text;
+                        mv2.price = Convert.ToInt32(txtboxPrice.Text);
+                        mv2.count = Convert.ToInt32(txtboxCount.Text);
+
+                        db.Entry(mv2).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();*/
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return;
+                }
+            }
+            this.Close();
+        } 
+
+        private void txtboxRent_TextChanged(object sender, EventArgs e) // Вывод даты ренты при вводе количества дней
+        {
+            DateTime date1 = new DateTime();
+            date1 = DateTime.Now.AddDays(Convert.ToInt32(txtboxRent.Text));
+            lblRent.Text = date1.ToString("ddd, dd MMM yyy HH’:’mm’:’ss ‘GMT’");
+        }
     }
 }
+

@@ -47,6 +47,10 @@
             this.lblcontact = new System.Windows.Forms.Label();
             this.lblbl = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lbldskcount = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblRent = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbxClient
@@ -103,6 +107,7 @@
             this.cmbxDisk.Name = "cmbxDisk";
             this.cmbxDisk.Size = new System.Drawing.Size(148, 21);
             this.cmbxDisk.TabIndex = 5;
+            this.cmbxDisk.SelectedIndexChanged += new System.EventHandler(this.cmbxDisk_SelectedIndexChanged);
             this.cmbxDisk.Click += new System.EventHandler(this.cmbxDisk_Click);
             this.cmbxDisk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxDisk_KeyPress);
             // 
@@ -134,15 +139,16 @@
             // 
             // txtboxRent
             // 
-            this.txtboxRent.Location = new System.Drawing.Point(113, 452);
+            this.txtboxRent.Location = new System.Drawing.Point(113, 482);
             this.txtboxRent.Name = "txtboxRent";
             this.txtboxRent.Size = new System.Drawing.Size(148, 20);
             this.txtboxRent.TabIndex = 9;
+            this.txtboxRent.TextChanged += new System.EventHandler(this.txtboxRent_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 455);
+            this.label4.Location = new System.Drawing.Point(40, 485);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 10;
@@ -173,6 +179,7 @@
             this.btnAddOrder.TabIndex = 13;
             this.btnAddOrder.Text = "Оформить заказ";
             this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // label6
             // 
@@ -219,11 +226,50 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Контактный телефон:";
             // 
+            // lbldskcount
+            // 
+            this.lbldskcount.AutoSize = true;
+            this.lbldskcount.Location = new System.Drawing.Point(144, 449);
+            this.lbldskcount.Name = "lbldskcount";
+            this.lbldskcount.Size = new System.Drawing.Size(0, 13);
+            this.lbldskcount.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(39, 449);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Дисков в наличии";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(43, 554);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(40, 13);
+            this.lblTime.TabIndex = 21;
+            this.lblTime.Text = "lblTime";
+            // 
+            // lblRent
+            // 
+            this.lblRent.AutoSize = true;
+            this.lblRent.Location = new System.Drawing.Point(43, 567);
+            this.lblRent.Name = "lblRent";
+            this.lblRent.Size = new System.Drawing.Size(35, 13);
+            this.lblRent.TabIndex = 22;
+            this.lblRent.Text = "lblrent";
+            // 
             // AddOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.lblRent);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbldskcount);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblbl);
             this.Controls.Add(this.lblcontact);
@@ -245,6 +291,7 @@
             this.Controls.Add(this.cmbxClient);
             this.Name = "AddOrderForm";
             this.Text = "AddOrderForm";
+            this.Activated += new System.EventHandler(this.AddOrderForm_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +318,9 @@
         public System.Windows.Forms.Label lblcontact;
         public System.Windows.Forms.Label lblbl;
         public System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbldskcount;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblRent;
     }
 }
