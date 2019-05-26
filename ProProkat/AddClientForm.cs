@@ -14,6 +14,7 @@ namespace ProProkat
     {
         public string name2;
         public bool add_or_edit = false;
+        public bool chkModal = false;
         public AddClientForm()
         {
             InitializeComponent();
@@ -62,9 +63,12 @@ namespace ProProkat
                     return;
                 }
             }
-            AddOrderForm aof = new AddOrderForm();
-            aof.fillchkbox();
-            this.Close();
+            if (!chkModal)
+                this.Close();
+            else
+            {
+                MessageBox.Show("Клиент добавлен");
+            }
         }
         private void AddClientForm_Load(object sender, EventArgs e)
         {

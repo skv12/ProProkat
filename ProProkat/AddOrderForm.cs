@@ -22,16 +22,16 @@ namespace ProProkat
 
 
 
-
-        private Form form_activated;
+        
         public void ClientForm() // Форма с добавление клиентов
         {
             this.panel.Controls.Clear();
-            form_activated = new AddClientForm();
+            AddClientForm form_activated = new AddClientForm();
             form_activated.FormBorderStyle = 0;
             form_activated.TopLevel = false;
             form_activated.Dock = DockStyle.Fill;
             this.panel.Controls.Add(form_activated);
+            form_activated.chkModal = true;
             form_activated.Show();
             this.panel.Enabled = false;
             
@@ -52,9 +52,7 @@ namespace ProProkat
             cmbxDisk.ValueMember = "Id";
             cmbxDisk.DisplayMember = "name";
 
-
-           // cmbxClient.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-           // cmbxDisk.AutoCompleteSource = AutoCompleteSource.ListItems;
+            
         }
 
 
