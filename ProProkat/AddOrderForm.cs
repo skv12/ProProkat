@@ -17,6 +17,7 @@ namespace ProProkat
             InitializeComponent();
             ClientForm();
             fillchkbox();
+            var values = new AutoCompleteStringCollection();
         }
 
 
@@ -33,6 +34,7 @@ namespace ProProkat
             this.panel.Controls.Add(form_activated);
             form_activated.Show();
             this.panel.Enabled = false;
+            
         }
 
 
@@ -43,15 +45,20 @@ namespace ProProkat
             cmbxClient.ValueMember = "Id";
             cmbxClient.DisplayMember = "fullname";
             clientcheck();
+            cmbxClient.Text = "";
 
 
             cmbxDisk.DataSource = db.movies.ToList<movies>();
             cmbxDisk.ValueMember = "Id";
             cmbxDisk.DisplayMember = "name";
+
+
+           // cmbxClient.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+           // cmbxDisk.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
 
-        private void chkNewClient_CheckedChanged(object sender, EventArgs e) // Включения/выключение видимости формы добавления клиента
+        public void chkNewClient_CheckedChanged(object sender, EventArgs e) // Включения/выключение видимости формы добавления клиента
         {
             if (chkNewClient.Checked)
                 this.panel.Enabled = true;
@@ -59,12 +66,12 @@ namespace ProProkat
                 this.panel.Enabled = false;
         }
 
-        private void cmbxClient_SelectedIndexChanged(object sender, EventArgs e) // Изменения при выборе клиента из combobox
+        public void cmbxClient_SelectedIndexChanged(object sender, EventArgs e) // Изменения при выборе клиента из combobox
         {
             clientcheck();
         }
 
-        private void clientcheck() // Проверка клиента на наличие в черном списке, вывод его контактных данных рядом с его именем.
+        public void clientcheck() // Проверка клиента на наличие в черном списке, вывод его контактных данных рядом с его именем.
         {
             pp_dbEntities db = new pp_dbEntities();
             int ID = Convert.ToInt32(cmbxClient.SelectedValue.ToString());
@@ -75,7 +82,6 @@ namespace ProProkat
             {
                 lblbl.Text = "Клиент находится в черном списке";
                 btnAddOrder.Visible = false;
-                //BeginInvoke(new Action(() => cmbxClient.Text = ""));
             }
             else
             {
@@ -84,7 +90,7 @@ namespace ProProkat
             }
         }
 
-        private void btnAddDisk_Click(object sender, EventArgs e) // Добавление дисков в заказ
+        public void btnAddDisk_Click(object sender, EventArgs e) // Добавление дисков в заказ
         {
             pp_dbEntities db = new pp_dbEntities();
             movies mv = db.movies.Where(c => c.name == cmbxDisk.Text).FirstOrDefault();
@@ -98,6 +104,46 @@ namespace ProProkat
                 db.SaveChanges();
             }
 
+        }
+
+        private void cmbxClient_KeyPress(object sender, KeyPressEventArgs e) // Живой поиск в cmbxClient (нашел в интернете, ниче не понял o_O )
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+            if ((char.IsControl(e.KeyChar)))
+                return;
+            string Str = ((ComboBox)(sender)).Text.Substring(0, ((ComboBox)(sender)).SelectionStart) + e.KeyChar;
+            int Index = ((ComboBox)(sender)).FindStringExact(Str);
+            if (Index == -1)
+                Index = ((ComboBox)(sender)).FindString(Str);
+            ((ComboBox)sender).SelectedIndex = Index;
+            ((ComboBox)(sender)).SelectionStart = Str.Length;
+            ((ComboBox)(sender)).SelectionLength = ((ComboBox)(sender)).Text.Length - ((ComboBox)(sender)).SelectionStart;
+            e.Handled = true;
+        }
+
+        private void cmbxDisk_KeyPress(object sender, KeyPressEventArgs e) // То же самое, но по дискам
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+            if ((char.IsControl(e.KeyChar)))
+                return;
+            string Str = ((ComboBox)(sender)).Text.Substring(0, ((ComboBox)(sender)).SelectionStart) + e.KeyChar;
+            int Index = ((ComboBox)(sender)).FindStringExact(Str);
+            if (Index == -1)
+                Index = ((ComboBox)(sender)).FindString(Str);
+            ((ComboBox)sender).SelectedIndex = Index;
+            ((ComboBox)(sender)).SelectionStart = Str.Length;
+            ((ComboBox)(sender)).SelectionLength = ((ComboBox)(sender)).Text.Length - ((ComboBox)(sender)).SelectionStart;
+            e.Handled = true;
+        }
+
+        private void cmbxClient_Click(object sender, EventArgs e) // При клике на комбобокс сразу появляются варианты.
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+        }
+
+        private void cmbxDisk_Click(object sender, EventArgs e) // То же самое, но по дискам
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
         }
     }
 }
