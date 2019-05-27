@@ -193,8 +193,7 @@ namespace ProProkat
         }
 
 
-
-        public bool add_or_edit = false;
+        
         private void btnAddOrder_Click(object sender, EventArgs e) // Добавление заказа
         {
             using (pp_dbEntities db = new pp_dbEntities())
@@ -214,27 +213,8 @@ namespace ProProkat
                 };
                 try
                 {
-                    if (!add_or_edit)
-                    {
-                        db.orders.Add(ord);
-                        db.SaveChanges();
-                    }
-                    else
-                    {
-                       /* movies mv2 = db.movies.Where(c => c.name == name2).FirstOrDefault();
-                        mv2.name = txtboxName.Text;
-                        mv2.synopsis = rTxtBoxSynopsis.Text;
-                        mv2.genres = txtboxGenre.Text;
-                        mv2.director = txtboxDirector.Text;
-                        mv2.year = txtboxYear.Text;
-                        mv2.agerating = txtboxAgeRating.Text;
-                        mv2.country = txtboxCountry.Text;
-                        mv2.price = Convert.ToInt32(txtboxPrice.Text);
-                        mv2.count = Convert.ToInt32(txtboxCount.Text);
-
-                        db.Entry(mv2).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();*/
-                    }
+                    db.orders.Add(ord);
+                    db.SaveChanges();
                 }
                 catch (Exception ex)
                 {
@@ -249,6 +229,11 @@ namespace ProProkat
             DateTime date1 = new DateTime();
             date1 = DateTime.Now.AddDays(Convert.ToInt32(txtboxRent.Text));
             lblRent.Text = date1.ToString("ddd, dd MMM yyy HH’:’mm’:’ss ‘GMT’");
+        }
+
+        private void AddOrderForm_Load(object sender, EventArgs e)
+        {
+            btnAddOrder.Name = "Закрыть заказ";
         }
     }
 }

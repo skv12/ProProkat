@@ -292,6 +292,7 @@
             this.Name = "AddOrderForm";
             this.Text = "AddOrderForm";
             this.Activated += new System.EventHandler(this.AddOrderForm_Activated);
+            this.Load += new System.EventHandler(this.AddOrderForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

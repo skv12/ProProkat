@@ -141,6 +141,12 @@
     <Compile Include="movies.cs">
       <DependentUpon>pp_model.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderCloseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderCloseForm.Designer.cs">
+      <DependentUpon>OrderCloseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="orders.cs">
       <DependentUpon>pp_model.tt</DependentUpon>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderCloseForm.resx">
+      <DependentUpon>OrderCloseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdersSubForm.resx">
       <DependentUpon>OrdersSubForm.cs</DependentUpon>
