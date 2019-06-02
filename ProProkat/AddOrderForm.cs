@@ -45,8 +45,7 @@ namespace ProProkat
             cmbxDisk.DataSource = db.movies.ToList<movies>();
             cmbxDisk.ValueMember = "Id";
             cmbxDisk.DisplayMember = "name";
-
- 
+            
             lblTime.Text = DateTime.Now.ToString("ddd, dd MMM yyy HH’:’mm’:’ss ‘GMT’");
         }
 
@@ -73,63 +72,130 @@ namespace ProProkat
 
             if (cl.blackliststatus == 1)
             {
-                lblbl.Text = "Клиент находится в черном списке";
+                if (txtboxRent.Text != "")
+                {
+                    if (Convert.ToInt32(txtboxRent.Text) > 14)
+                        lblbl.Text = "Клиент находится в черном списке" + '\n' + "Максимальный срок заказа 14 дней";
+                    else
+                        lblbl.Text = "Клиент находится в черном списке";
+                }
+                else
+                    lblbl.Text = "Клиент находится в черном списке";
                 btnAddOrder.Visible = false;
             }
             else
             {
-                btnAddOrder.Visible = true;
-                lblbl.Text = "";
+                if (txtboxRent.Text != "")
+                {
+                    if (Convert.ToInt32(txtboxRent.Text) > 14)
+                    {
+                        btnAddOrder.Visible = false;
+                        lblbl.Text = "Максимальный срок заказа 14 дней";
+                    }
+                    else
+                    {
+                        lblbl.Text = "";
+                        btnAddOrder.Visible = true;
+                    }
+                }
+                else
+                {
+                    lblbl.Text = "";
+                    btnAddOrder.Visible = true;
+                }
             }
         }
 
         private int[] DiskList = new int[10000];
         private int[] DiskCount = new int[10000];
         private int i = 0;
-        private int price = 0;
+        private double price = 0;
+        private bool dobavlen = false;
+        private string SpisokDiskov;
+
         public void btnAddDisk_Click(object sender, EventArgs e) // Добавление дисков в заказ
         {
-            //int price = 0;
-            pp_dbEntities db = new pp_dbEntities();
-            movies mv = db.movies.Where(c => c.name == cmbxDisk.Text).FirstOrDefault();
-            int cnt = Convert.ToInt32((txtboxDiskCount.Text));
-
-            if (mv.count < cnt)
-            {
-                lbldskcount.Visible = false;
-                label8.Text = "Закажите не более " + lbldskcount.Text + " дисков"; 
-            }
+            if (txtboxDiskCount.Text == "" || Convert.ToInt32(txtboxDiskCount.Text) == 0)
+                lbldsk.Visible = true;
             else
             {
-                mv.count = mv.count - cnt;
-                db.Entry(mv).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-                int ID = Convert.ToInt32(cmbxDisk.SelectedValue.ToString());
-                movies dsk = db.movies.Where(c => c.Id == ID).FirstOrDefault();
-                lbldskcount.Text = dsk.count.ToString();
-                lbldskcount.Visible = true;
-                label8.Text = "Дисков в наличии:";
-                bool UsheEst = false;
-                for(int j = 0; j < i; j++)
+                lbldsklst.Text = "";
+                dobavlen = true;
+                lbldsk.Visible = false;
+                pp_dbEntities db = new pp_dbEntities();
+                movies mv = db.movies.Where(c => c.name == cmbxDisk.Text).FirstOrDefault();
+                int cnt = Convert.ToInt32((txtboxDiskCount.Text));
+                if (mv.count < cnt)
                 {
-                    if (DiskList[j] == dsk.Id)
+                    lbldskcount.Visible = false;
+                    label8.Text = "Закажите не более " + lbldskcount.Text + " дисков";
+                }
+                else
+                {
+                    mv.count = mv.count - cnt;
+                    db.Entry(mv).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    int ID = Convert.ToInt32(cmbxDisk.SelectedValue.ToString());
+                    movies dsk = db.movies.Where(c => c.Id == ID).FirstOrDefault();
+                    lbldskcount.Text = dsk.count.ToString();
+                    lbldskcount.Visible = true;
+                    label8.Text = "Дисков в наличии:";
+                    bool UsheEst = false;
+                    for (int j = 0; j < i; j++)
                     {
-                        DiskCount[j] = DiskCount[j] + cnt;
-                        UsheEst = true;
+                        if (DiskList[j] == dsk.Id)
+                        {
+                            DiskCount[j] = DiskCount[j] + cnt;
+                            UsheEst = true;
+                            price = price + dsk.price * cnt;
+                            break;
+                        }
+                    }
+                    if (!UsheEst)
+                    {
+                        DiskList[i] = dsk.Id;
+                        DiskCount[i] = cnt;
                         price = price + dsk.price * cnt;
-                        break;
+                        i++;
                     }
                 }
-                if (!UsheEst)
+                if (txtboxRent.Text != "")
+                    lblPrice.Text = (price / 20 * Convert.ToDouble(txtboxRent.Text)).ToString();
+                else
+                    lblPrice.Text = (price / 20).ToString();
+                    lblDeposit.Text = price.ToString();
+
+                SpisokDiskov = "";
+                for (int j = 0; j < i; j++)
+                    SpisokDiskov = SpisokDiskov + DiskList[j].ToString() + " " + DiskCount[j].ToString() + " ";
+
+                string dl = "";
+                string s = SpisokDiskov;
+                bool a = true;
+                int id3 = 0;
+                String[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 0; i < words.Length; i++)
                 {
-                    DiskList[i] = dsk.Id;
-                    DiskCount[i] = cnt;
-                    price = price + dsk.price * cnt;
-                    i++;
+                    int[] array = words[i].Where(x => char.IsNumber(x)).Select(x => x - 48).ToArray();
+                    for (int j = 0; j < array.Length; j++)
+                        id3 = id3 * 10 + array[j];
+                    if (a)
+                    {
+                        dl = "";
+                        movies mv3 = db.movies.Where(c => c.Id == id3).FirstOrDefault();
+                        dl = dl + mv3.name.ToString() + " ";
+                        id3 = 0;
+                        a = false;
+                    }
+                    else
+                    {
+                        dl = dl + id3.ToString() + " шт ";
+                        id3 = 0;
+                        a = true;
+                        lbldsklst.Text = lbldsklst.Text + '\n' + dl;
+                    }
                 }
             }
-            lblDeposit.Text = price.ToString();
-            lblPrice.Text = (price / 5).ToString();
         }
 
         private void cmbxClient_KeyPress(object sender, KeyPressEventArgs e) // Живой поиск в cmbxClient (нашел в интернете, ниче не понял o_O )
@@ -196,44 +262,99 @@ namespace ProProkat
         
         private void btnAddOrder_Click(object sender, EventArgs e) // Добавление заказа
         {
-            using (pp_dbEntities db = new pp_dbEntities())
+            if (cmbxClient.Text == "" || lblRent.Text == "" || !dobavlen)
             {
-                string SpisokDiskov = "";
-                for (int j = 0; j < i; j++)
-                    SpisokDiskov = SpisokDiskov + DiskList[j].ToString() + " " + DiskCount[j].ToString() + " ";
-                 
-                orders ord = new orders
-                {
-                    client = cmbxClient.Text,
-                    status = "1",
-                    date = DateTime.Now,
-                    rent = DateTime.Now.AddDays(Convert.ToInt32(txtboxRent.Text)),
-                    disklist = SpisokDiskov,
-                    deposit =Convert.ToString(price),
-                };
-                try
-                {
-                    db.orders.Add(ord);
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    return;
-                }
+                lblbl.Text = '\n' + "Все поля обязательны к заполнению";
             }
-            this.Close();
+            else
+            {
+                using (pp_dbEntities db = new pp_dbEntities())
+                {
+
+                    orders ord = new orders
+                    {
+                        client = cmbxClient.Text,
+                        status = "1",
+                        date = DateTime.Now,
+                        rent = DateTime.Now.AddDays(Convert.ToInt32(txtboxRent.Text)),
+                        disklist = SpisokDiskov,
+                        deposit = Convert.ToString(price),
+                    };
+                    try
+                    {
+                        db.orders.Add(ord);
+                        db.SaveChanges();
+                    }
+                    catch (Exception ex)
+                    {
+                        return;
+                    }
+                    
+                }
+                this.Close();
+            }
         } 
 
-        private void txtboxRent_TextChanged(object sender, EventArgs e) // Вывод даты ренты при вводе количества дней
-        {
+        private void txtboxRent_TextChanged(object sender, EventArgs e) // Вывод даты ренты при вводе количества дней и стоимости ренты.
+        {   
             DateTime date1 = new DateTime();
-            date1 = DateTime.Now.AddDays(Convert.ToInt32(txtboxRent.Text));
-            lblRent.Text = date1.ToString("ddd, dd MMM yyy HH’:’mm’:’ss ‘GMT’");
+            if (txtboxRent.Text != "")
+            {
+                date1 = DateTime.Now.AddDays(Convert.ToInt32(txtboxRent.Text));
+                lblRent.Text = date1.ToString("ddd, dd MMM yyy HH’:’mm’:’ss ‘GMT’");
+                lblPrice.Text = (price / 20 * Convert.ToDouble(txtboxRent.Text)).ToString();
+                pp_dbEntities db = new pp_dbEntities();
+                int ID = Convert.ToInt32(cmbxClient.SelectedValue.ToString());
+                clients cl = db.clients.Where(c => c.id == ID).FirstOrDefault();
+
+                if (Convert.ToInt32(txtboxRent.Text) > 14)
+                {
+                    btnAddOrder.Visible = false;
+                    if (cl.blackliststatus == 0)
+                        lblbl.Text = "Максимальный срок заказа 14 дней";
+                    else
+                        lblbl.Text = "Клиент находится в черном списке" + '\n' + "Максимальный срок заказа 14 дней";
+                }
+                else
+                {
+                    
+                    if (cl.blackliststatus == 1)
+                        lblbl.Text = "Клиент находится в черном списке";
+                    else
+                    {
+                        btnAddOrder.Visible = true;
+                        lblbl.Text = "";
+                    }
+                }
+            }
+            else
+                lblPrice.Text = (price / 20).ToString();
+            
         }
 
-        private void AddOrderForm_Load(object sender, EventArgs e)
+        private void AddOrderForm_Load(object sender, EventArgs e) // Бесполезный кусок кода.
         {
             btnAddOrder.Name = "Закрыть заказ";
+        }
+
+        private void txtboxDiskCount_KeyPress(object sender, KeyPressEventArgs e) // Ограничения ввода в текстобокс(только числа)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsDigit(number) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtboxRent_KeyPress(object sender, KeyPressEventArgs e) // Ограничения ввода в текстобокс(только числа)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsDigit(number) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

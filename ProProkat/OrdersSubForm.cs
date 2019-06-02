@@ -83,7 +83,6 @@ namespace ProProkat
                         id3 = 0;
                         a = true;
                     }
-
             }
 
 

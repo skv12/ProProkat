@@ -51,12 +51,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblRent = new System.Windows.Forms.Label();
+            this.lbldsk = new System.Windows.Forms.Label();
+            this.lbldsklst = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbxClient
             // 
             this.cmbxClient.FormattingEnabled = true;
-            this.cmbxClient.Location = new System.Drawing.Point(113, 363);
+            this.cmbxClient.Location = new System.Drawing.Point(113, 324);
             this.cmbxClient.Name = "cmbxClient";
             this.cmbxClient.Size = new System.Drawing.Size(148, 21);
             this.cmbxClient.TabIndex = 0;
@@ -79,13 +81,13 @@
             // 
             this.panel.Location = new System.Drawing.Point(40, 58);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(709, 279);
+            this.panel.Size = new System.Drawing.Size(793, 260);
             this.panel.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 366);
+            this.label1.Location = new System.Drawing.Point(40, 327);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 3;
@@ -94,7 +96,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 410);
+            this.label2.Location = new System.Drawing.Point(40, 371);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 4;
@@ -103,7 +105,7 @@
             // cmbxDisk
             // 
             this.cmbxDisk.FormattingEnabled = true;
-            this.cmbxDisk.Location = new System.Drawing.Point(113, 407);
+            this.cmbxDisk.Location = new System.Drawing.Point(113, 368);
             this.cmbxDisk.Name = "cmbxDisk";
             this.cmbxDisk.Size = new System.Drawing.Size(148, 21);
             this.cmbxDisk.TabIndex = 5;
@@ -113,7 +115,7 @@
             // 
             // btnAddDisk
             // 
-            this.btnAddDisk.Location = new System.Drawing.Point(479, 405);
+            this.btnAddDisk.Location = new System.Drawing.Point(479, 366);
             this.btnAddDisk.Name = "btnAddDisk";
             this.btnAddDisk.Size = new System.Drawing.Size(75, 23);
             this.btnAddDisk.TabIndex = 6;
@@ -123,15 +125,17 @@
             // 
             // txtboxDiskCount
             // 
-            this.txtboxDiskCount.Location = new System.Drawing.Point(349, 407);
+            this.txtboxDiskCount.Location = new System.Drawing.Point(349, 368);
+            this.txtboxDiskCount.MaxLength = 4;
             this.txtboxDiskCount.Name = "txtboxDiskCount";
             this.txtboxDiskCount.Size = new System.Drawing.Size(100, 20);
             this.txtboxDiskCount.TabIndex = 7;
+            this.txtboxDiskCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxDiskCount_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(277, 410);
+            this.label3.Location = new System.Drawing.Point(277, 371);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 8;
@@ -139,16 +143,18 @@
             // 
             // txtboxRent
             // 
-            this.txtboxRent.Location = new System.Drawing.Point(113, 482);
+            this.txtboxRent.Location = new System.Drawing.Point(113, 443);
+            this.txtboxRent.MaxLength = 3;
             this.txtboxRent.Name = "txtboxRent";
             this.txtboxRent.Size = new System.Drawing.Size(148, 20);
             this.txtboxRent.TabIndex = 9;
             this.txtboxRent.TextChanged += new System.EventHandler(this.txtboxRent_TextChanged);
+            this.txtboxRent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxRent_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 485);
+            this.label4.Location = new System.Drawing.Point(40, 446);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 10;
@@ -157,7 +163,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(401, 524);
+            this.label5.Location = new System.Drawing.Point(277, 481);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 11;
@@ -166,14 +172,14 @@
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(487, 524);
+            this.lblPrice.Location = new System.Drawing.Point(363, 481);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(0, 13);
             this.lblPrice.TabIndex = 12;
             // 
             // btnAddOrder
             // 
-            this.btnAddOrder.Location = new System.Drawing.Point(643, 554);
+            this.btnAddOrder.Location = new System.Drawing.Point(736, 491);
             this.btnAddOrder.Name = "btnAddOrder";
             this.btnAddOrder.Size = new System.Drawing.Size(106, 23);
             this.btnAddOrder.TabIndex = 13;
@@ -184,7 +190,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(402, 490);
+            this.label6.Location = new System.Drawing.Point(278, 447);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 13);
             this.label6.TabIndex = 14;
@@ -193,7 +199,7 @@
             // lblDeposit
             // 
             this.lblDeposit.AutoSize = true;
-            this.lblDeposit.Location = new System.Drawing.Point(488, 489);
+            this.lblDeposit.Location = new System.Drawing.Point(364, 446);
             this.lblDeposit.Name = "lblDeposit";
             this.lblDeposit.Size = new System.Drawing.Size(0, 13);
             this.lblDeposit.TabIndex = 15;
@@ -202,7 +208,7 @@
             // 
             this.lblcontact.AutoSize = true;
             this.lblcontact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblcontact.Location = new System.Drawing.Point(433, 371);
+            this.lblcontact.Location = new System.Drawing.Point(433, 332);
             this.lblcontact.Name = "lblcontact";
             this.lblcontact.Size = new System.Drawing.Size(0, 16);
             this.lblcontact.TabIndex = 16;
@@ -211,7 +217,7 @@
             // 
             this.lblbl.AutoSize = true;
             this.lblbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblbl.Location = new System.Drawing.Point(488, 557);
+            this.lblbl.Location = new System.Drawing.Point(475, 510);
             this.lblbl.Name = "lblbl";
             this.lblbl.Size = new System.Drawing.Size(0, 20);
             this.lblbl.TabIndex = 17;
@@ -220,7 +226,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(277, 368);
+            this.label7.Location = new System.Drawing.Point(277, 329);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(150, 16);
             this.label7.TabIndex = 18;
@@ -229,7 +235,7 @@
             // lbldskcount
             // 
             this.lbldskcount.AutoSize = true;
-            this.lbldskcount.Location = new System.Drawing.Point(144, 449);
+            this.lbldskcount.Location = new System.Drawing.Point(144, 410);
             this.lbldskcount.Name = "lbldskcount";
             this.lbldskcount.Size = new System.Drawing.Size(0, 13);
             this.lbldskcount.TabIndex = 19;
@@ -237,7 +243,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(39, 449);
+            this.label8.Location = new System.Drawing.Point(39, 410);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 13);
             this.label8.TabIndex = 20;
@@ -246,7 +252,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(43, 554);
+            this.lblTime.Location = new System.Drawing.Point(40, 478);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(40, 13);
             this.lblTime.TabIndex = 21;
@@ -255,17 +261,38 @@
             // lblRent
             // 
             this.lblRent.AutoSize = true;
-            this.lblRent.Location = new System.Drawing.Point(43, 567);
+            this.lblRent.Location = new System.Drawing.Point(40, 491);
             this.lblRent.Name = "lblRent";
-            this.lblRent.Size = new System.Drawing.Size(35, 13);
+            this.lblRent.Size = new System.Drawing.Size(0, 13);
             this.lblRent.TabIndex = 22;
-            this.lblRent.Text = "lblrent";
+            // 
+            // lbldsk
+            // 
+            this.lbldsk.AutoSize = true;
+            this.lbldsk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbldsk.Location = new System.Drawing.Point(475, 392);
+            this.lbldsk.Name = "lbldsk";
+            this.lbldsk.Size = new System.Drawing.Size(169, 20);
+            this.lbldsk.TabIndex = 23;
+            this.lbldsk.Text = "Введите количество";
+            this.lbldsk.Visible = false;
+            // 
+            // lbldsklst
+            // 
+            this.lbldsklst.AutoSize = true;
+            this.lbldsklst.Location = new System.Drawing.Point(674, 327);
+            this.lbldsklst.Name = "lbldsklst";
+            this.lbldsklst.Size = new System.Drawing.Size(86, 13);
+            this.lbldsklst.TabIndex = 24;
+            this.lbldsklst.Text = "Список дисков:";
             // 
             // AddOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(854, 560);
+            this.Controls.Add(this.lbldsklst);
+            this.Controls.Add(this.lbldsk);
             this.Controls.Add(this.lblRent);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.label8);
@@ -323,5 +350,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblRent;
+        private System.Windows.Forms.Label lbldsk;
+        private System.Windows.Forms.Label lbldsklst;
     }
 }

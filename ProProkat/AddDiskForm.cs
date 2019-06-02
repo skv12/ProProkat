@@ -28,7 +28,7 @@ namespace ProProkat
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtboxName.Text == "" || txtboxPrice.Text == "" || txtboxCount.Text == "")
-                MessageBox.Show("ЭЭЭ, ЗАПОЛНИ!");
+                MessageBox.Show("Название диска, его цена и количество обязательны к заполнению");
             else
             {
                 using (pp_dbEntities db = new pp_dbEntities())
