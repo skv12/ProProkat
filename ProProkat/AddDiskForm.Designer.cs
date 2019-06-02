@@ -58,6 +58,7 @@
             this.txtboxPrice.Name = "txtboxPrice";
             this.txtboxPrice.Size = new System.Drawing.Size(100, 20);
             this.txtboxPrice.TabIndex = 0;
+            this.txtboxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxPrice_KeyPress);
             // 
             // lblDiskPrice
             // 
@@ -92,6 +93,7 @@
             this.txtboxCount.Name = "txtboxCount";
             this.txtboxCount.Size = new System.Drawing.Size(100, 20);
             this.txtboxCount.TabIndex = 4;
+            this.txtboxCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxCount_KeyPress);
             // 
             // txtboxName
             // 
@@ -225,10 +227,10 @@
             this.lnkNewGenre.AutoSize = true;
             this.lnkNewGenre.Location = new System.Drawing.Point(238, 204);
             this.lnkNewGenre.Name = "lnkNewGenre";
-            this.lnkNewGenre.Size = new System.Drawing.Size(92, 13);
+            this.lnkNewGenre.Size = new System.Drawing.Size(84, 13);
             this.lnkNewGenre.TabIndex = 29;
             this.lnkNewGenre.TabStop = true;
-            this.lnkNewGenre.Text = "Добавить новый";
+            this.lnkNewGenre.Text = "Редактировать";
             this.lnkNewGenre.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkNewGenre_LinkClicked);
             // 
             // lnkNewCountry
@@ -236,10 +238,10 @@
             this.lnkNewCountry.AutoSize = true;
             this.lnkNewCountry.Location = new System.Drawing.Point(238, 230);
             this.lnkNewCountry.Name = "lnkNewCountry";
-            this.lnkNewCountry.Size = new System.Drawing.Size(92, 13);
+            this.lnkNewCountry.Size = new System.Drawing.Size(84, 13);
             this.lnkNewCountry.TabIndex = 30;
             this.lnkNewCountry.TabStop = true;
-            this.lnkNewCountry.Text = "Добавить новый";
+            this.lnkNewCountry.Text = "Редактировать";
             this.lnkNewCountry.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkNewCountry_LinkClicked);
             // 
             // lnkNewAgeRating
@@ -247,10 +249,10 @@
             this.lnkNewAgeRating.AutoSize = true;
             this.lnkNewAgeRating.Location = new System.Drawing.Point(238, 256);
             this.lnkNewAgeRating.Name = "lnkNewAgeRating";
-            this.lnkNewAgeRating.Size = new System.Drawing.Size(92, 13);
+            this.lnkNewAgeRating.Size = new System.Drawing.Size(84, 13);
             this.lnkNewAgeRating.TabIndex = 31;
             this.lnkNewAgeRating.TabStop = true;
-            this.lnkNewAgeRating.Text = "Добавить новый";
+            this.lnkNewAgeRating.Text = "Редактировать";
             this.lnkNewAgeRating.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkNewAgeRating_LinkClicked);
             // 
             // AddDiskForm

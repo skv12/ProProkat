@@ -27,50 +27,56 @@ namespace ProProkat
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            using (pp_dbEntities db = new pp_dbEntities())
+            if (txtboxName.Text == "" || txtboxPrice.Text == "" || txtboxCount.Text == "")
+                MessageBox.Show("ЭЭЭ, ЗАПОЛНИ!");
+            else
             {
+                using (pp_dbEntities db = new pp_dbEntities())
+                {
 
-                movies mv = new movies
-                {
-                    name = txtboxName.Text,
-                    synopsis = rTxtBoxSynopsis.Text,
-                    genres = cmbxGenre.Text,
-                    director = txtboxDirector.Text,
-                    year = txtboxYear.Text,
-                    agerating = cmbxAgerating.Text,
-                    country = cmbxCounrty.Text,
-                    price = Convert.ToInt32(txtboxPrice.Text),
-                    count = Convert.ToInt32(txtboxCount.Text),
-                };
-                try
-                {
-                    if (!add_or_edit)
+                    movies mv = new movies
                     {
-                        db.movies.Add(mv);
-                        db.SaveChanges();
+                        name = txtboxName.Text,
+                        synopsis = rTxtBoxSynopsis.Text,
+                        genres = cmbxGenre.Text,
+                        director = txtboxDirector.Text,
+                        year = txtboxYear.Text,
+                        agerating = cmbxAgerating.Text,
+                        country = cmbxCounrty.Text,
+                        price = Convert.ToInt32(txtboxPrice.Text),
+                        count = Convert.ToInt32(txtboxCount.Text),
+                    };
+                    try
+                    {
+                        if (!add_or_edit)
+                        {
+                            db.movies.Add(mv);
+                            db.SaveChanges();
+                        }
+                        else
+                        {
+                            movies mv2 = db.movies.Where(c => c.name == name2).FirstOrDefault();
+                            mv2.name = txtboxName.Text;
+                            mv2.synopsis = rTxtBoxSynopsis.Text;
+                            mv2.genres = cmbxGenre.Text;
+                            mv2.director = txtboxDirector.Text;
+                            mv2.year = txtboxYear.Text;
+                            mv2.agerating = cmbxAgerating.Text;
+                            mv2.country = cmbxCounrty.Text;
+                            mv2.price = Convert.ToInt32(txtboxPrice.Text);
+                            mv2.count = Convert.ToInt32(txtboxCount.Text);
+
+                            db.Entry(mv2).State = System.Data.Entity.EntityState.Modified;
+                            db.SaveChanges();
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        movies mv2 = db.movies.Where(c => c.name == name2).FirstOrDefault();
-                        mv2.name = txtboxName.Text;
-                        mv2.synopsis = rTxtBoxSynopsis.Text;
-                        mv2.genres = cmbxGenre.Text;
-                        mv2.director = txtboxDirector.Text;
-                        mv2.year = txtboxYear.Text;
-                        mv2.agerating = cmbxAgerating.Text;
-                        mv2.country = cmbxCounrty.Text;
-                        mv2.price = Convert.ToInt32(txtboxPrice.Text);
-                        mv2.count = Convert.ToInt32(txtboxCount.Text);
-
-                        db.Entry(mv2).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
+                        return;
                     }
                 }
-                catch (Exception ex) {
-                    return;
-                }
+                this.Close();
             }
-            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -187,6 +193,26 @@ namespace ProProkat
             edit_form.lblData.Text = "Возрастной рейтинг";
             edit_form.ShowDialog();
             fillchkbox();
+        }
+
+        private void txtboxPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsDigit(number) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtboxCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsDigit(number) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -31,10 +31,6 @@
             this.btnAddDisk = new System.Windows.Forms.Button();
             this.btnRemoveDisk = new System.Windows.Forms.Button();
             this.btnSearchDisk = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.DiskName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.DiskPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.DiskCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,37 +65,6 @@
             this.btnSearchDisk.Text = "Поиск";
             this.btnSearchDisk.UseVisualStyleBackColor = true;
             // 
-            // listView1
-            // 
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.DiskName,
-            this.DiskPrice,
-            this.DiskCount});
-            this.listView1.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.listView1.Location = new System.Drawing.Point(48, 136);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(699, 302);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.Visible = false;
-            // 
-            // DiskName
-            // 
-            this.DiskName.Text = "Название";
-            this.DiskName.Width = 467;
-            // 
-            // DiskPrice
-            // 
-            this.DiskPrice.Text = "Цена";
-            this.DiskPrice.Width = 92;
-            // 
-            // DiskCount
-            // 
-            this.DiskCount.Text = "Количество";
-            this.DiskCount.Width = 92;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -127,7 +92,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnSearchDisk);
             this.Controls.Add(this.btnRemoveDisk);
             this.Controls.Add(this.btnAddDisk);
@@ -145,10 +109,6 @@
         private System.Windows.Forms.Button btnAddDisk;
         private System.Windows.Forms.Button btnRemoveDisk;
         private System.Windows.Forms.Button btnSearchDisk;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader DiskName;
-        private System.Windows.Forms.ColumnHeader DiskPrice;
-        private System.Windows.Forms.ColumnHeader DiskCount;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnRefresh;
     }
