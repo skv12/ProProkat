@@ -69,8 +69,14 @@ namespace ProProkat
 
         private void BtnNewOrder_Click(object sender, EventArgs e)
         {
-            Form add_form = new AddOrderForm();
-            add_form.ShowDialog();
+            Form show_form = new AddOrderForm();
+            show_form.ShowDialog();
+        }
+
+        private void BtnCreateReport_Click(object sender, EventArgs e)
+        {
+            Form show_form = new CreateReportForm();
+            show_form.ShowDialog();
         }
     }
 }

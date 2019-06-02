@@ -113,6 +113,7 @@
             this.BtnCreateReport.TabIndex = 5;
             this.BtnCreateReport.Text = "Создать отчет по работе";
             this.BtnCreateReport.UseVisualStyleBackColor = true;
+            this.BtnCreateReport.Click += new System.EventHandler(this.BtnCreateReport_Click);
             // 
             // panel
             // 

@@ -21,11 +21,29 @@ namespace ProProkat
         {
             pp_dbEntities or = new pp_dbEntities();
             dataGridView1.DataSource = or.orders.ToList<orders>();
+
             dataGridView1.Columns[0].HeaderText = "ФИО клиента";
             dataGridView1.Columns[1].HeaderText = "Статус";
             dataGridView1.Columns[2].HeaderText = "Дата заказа";
             dataGridView1.Columns[3].HeaderText = "Срок";
-
+            if (chkboxClosedOrder.Checked == true)
+            {
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == "0" || dataGridView1.Rows[i].Cells[1].Value.ToString() == "3")
+                    {
+                        dataGridView1.Rows[i].Visible = false;
+                    }
+                }
+            }
+            else
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[1].Value.ToString() == "0" || dataGridView1.Rows[i].Cells[1].Value.ToString() == "3")
+                    {
+                        dataGridView1.Rows[i].Visible = true;
+                    }
+                }
             //for (int i = 4; i <= 5; i++) { dataGridView1.Columns[i].Visible = false; }
         }
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -77,6 +95,11 @@ namespace ProProkat
             close_form.lblrent.Text = or.rent.ToString();
             close_form.lblid.Text = or.id.ToString();
             close_form.ShowDialog();
+            zapis();
+        }
+
+        private void chkboxClosedOrder_CheckedChanged(object sender, EventArgs e)
+        {
             zapis();
         }
     }

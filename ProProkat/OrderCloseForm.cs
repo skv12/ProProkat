@@ -23,6 +23,7 @@ namespace ProProkat
             int id2 = Convert.ToInt32(lblid.Text.ToString());
             pp_dbEntities db = new pp_dbEntities();
             orders or = db.orders.Where(c => c.id == id2).FirstOrDefault();
+            or.closed_date = DateTime.Now;
             or.status = 0.ToString();
             db.Entry(or).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();

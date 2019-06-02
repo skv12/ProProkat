@@ -30,6 +30,7 @@
         {
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.chkboxClosedOrder = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,11 +54,23 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
+            // chkboxClosedOrder
+            // 
+            this.chkboxClosedOrder.AutoSize = true;
+            this.chkboxClosedOrder.Location = new System.Drawing.Point(576, 47);
+            this.chkboxClosedOrder.Name = "chkboxClosedOrder";
+            this.chkboxClosedOrder.Size = new System.Drawing.Size(218, 17);
+            this.chkboxClosedOrder.TabIndex = 2;
+            this.chkboxClosedOrder.Text = "Не показывать завершенные заказы";
+            this.chkboxClosedOrder.UseVisualStyleBackColor = true;
+            this.chkboxClosedOrder.CheckedChanged += new System.EventHandler(this.chkboxClosedOrder_CheckedChanged);
+            // 
             // OrdersSubForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkboxClosedOrder);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRefresh);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -65,6 +78,7 @@
             this.Text = "OrdersSubForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -72,5 +86,6 @@
 
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox chkboxClosedOrder;
     }
 }
