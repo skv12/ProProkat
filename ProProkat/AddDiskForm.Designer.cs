@@ -47,18 +47,14 @@
             this.cmbxGenre = new System.Windows.Forms.ComboBox();
             this.cmbxCounrty = new System.Windows.Forms.ComboBox();
             this.cmbxAgerating = new System.Windows.Forms.ComboBox();
-            this.btnAddData = new System.Windows.Forms.Button();
-            this.txtboxGenre = new System.Windows.Forms.TextBox();
-            this.txtboxAgeRating = new System.Windows.Forms.TextBox();
-            this.txtboxCountry = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lnkNewGenre = new System.Windows.Forms.LinkLabel();
+            this.lnkNewCountry = new System.Windows.Forms.LinkLabel();
+            this.lnkNewAgeRating = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // txtboxPrice
             // 
-            this.txtboxPrice.Location = new System.Drawing.Point(330, 217);
+            this.txtboxPrice.Location = new System.Drawing.Point(350, 217);
             this.txtboxPrice.Name = "txtboxPrice";
             this.txtboxPrice.Size = new System.Drawing.Size(100, 20);
             this.txtboxPrice.TabIndex = 0;
@@ -66,7 +62,7 @@
             // lblDiskPrice
             // 
             this.lblDiskPrice.AutoSize = true;
-            this.lblDiskPrice.Location = new System.Drawing.Point(327, 201);
+            this.lblDiskPrice.Location = new System.Drawing.Point(347, 201);
             this.lblDiskPrice.Name = "lblDiskPrice";
             this.lblDiskPrice.Size = new System.Drawing.Size(33, 13);
             this.lblDiskPrice.TabIndex = 1;
@@ -75,7 +71,7 @@
             // lblCountDisk
             // 
             this.lblCountDisk.AutoSize = true;
-            this.lblCountDisk.Location = new System.Drawing.Point(327, 251);
+            this.lblCountDisk.Location = new System.Drawing.Point(347, 251);
             this.lblCountDisk.Name = "lblCountDisk";
             this.lblCountDisk.Size = new System.Drawing.Size(66, 13);
             this.lblCountDisk.TabIndex = 2;
@@ -92,7 +88,7 @@
             // 
             // txtboxCount
             // 
-            this.txtboxCount.Location = new System.Drawing.Point(330, 267);
+            this.txtboxCount.Location = new System.Drawing.Point(350, 267);
             this.txtboxCount.Name = "txtboxCount";
             this.txtboxCount.Size = new System.Drawing.Size(100, 20);
             this.txtboxCount.TabIndex = 4;
@@ -174,7 +170,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(330, 312);
+            this.btnAdd.Location = new System.Drawing.Point(350, 312);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 18;
@@ -197,6 +193,7 @@
             this.cmbxGenre.Location = new System.Drawing.Point(111, 199);
             this.cmbxGenre.Name = "cmbxGenre";
             this.cmbxGenre.Size = new System.Drawing.Size(121, 21);
+            this.cmbxGenre.Sorted = true;
             this.cmbxGenre.TabIndex = 21;
             this.cmbxGenre.Click += new System.EventHandler(this.cmbxGenre_Click);
             this.cmbxGenre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxGenre_KeyPress);
@@ -207,6 +204,7 @@
             this.cmbxCounrty.Location = new System.Drawing.Point(111, 225);
             this.cmbxCounrty.Name = "cmbxCounrty";
             this.cmbxCounrty.Size = new System.Drawing.Size(121, 21);
+            this.cmbxCounrty.Sorted = true;
             this.cmbxCounrty.TabIndex = 22;
             this.cmbxCounrty.Click += new System.EventHandler(this.cmbxCounrty_Click);
             this.cmbxCounrty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxCounrty_KeyPress);
@@ -217,84 +215,57 @@
             this.cmbxAgerating.Location = new System.Drawing.Point(111, 252);
             this.cmbxAgerating.Name = "cmbxAgerating";
             this.cmbxAgerating.Size = new System.Drawing.Size(121, 21);
+            this.cmbxAgerating.Sorted = true;
             this.cmbxAgerating.TabIndex = 23;
             this.cmbxAgerating.Click += new System.EventHandler(this.cmbxAgerating_Click);
             this.cmbxAgerating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxAgerating_KeyPress);
             // 
-            // btnAddData
+            // lnkNewGenre
             // 
-            this.btnAddData.Location = new System.Drawing.Point(517, 144);
-            this.btnAddData.Name = "btnAddData";
-            this.btnAddData.Size = new System.Drawing.Size(166, 45);
-            this.btnAddData.TabIndex = 24;
-            this.btnAddData.Text = "Добавить Жанр/Страну/Рейтинг";
-            this.btnAddData.UseVisualStyleBackColor = true;
-            this.btnAddData.Click += new System.EventHandler(this.btnAddData_Click);
+            this.lnkNewGenre.AutoSize = true;
+            this.lnkNewGenre.Location = new System.Drawing.Point(238, 204);
+            this.lnkNewGenre.Name = "lnkNewGenre";
+            this.lnkNewGenre.Size = new System.Drawing.Size(92, 13);
+            this.lnkNewGenre.TabIndex = 29;
+            this.lnkNewGenre.TabStop = true;
+            this.lnkNewGenre.Text = "Добавить новый";
+            this.lnkNewGenre.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkNewGenre_LinkClicked);
             // 
-            // txtboxGenre
+            // lnkNewCountry
             // 
-            this.txtboxGenre.Location = new System.Drawing.Point(597, 66);
-            this.txtboxGenre.Name = "txtboxGenre";
-            this.txtboxGenre.Size = new System.Drawing.Size(100, 20);
-            this.txtboxGenre.TabIndex = 7;
+            this.lnkNewCountry.AutoSize = true;
+            this.lnkNewCountry.Location = new System.Drawing.Point(238, 230);
+            this.lnkNewCountry.Name = "lnkNewCountry";
+            this.lnkNewCountry.Size = new System.Drawing.Size(92, 13);
+            this.lnkNewCountry.TabIndex = 30;
+            this.lnkNewCountry.TabStop = true;
+            this.lnkNewCountry.Text = "Добавить новый";
+            this.lnkNewCountry.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkNewCountry_LinkClicked);
             // 
-            // txtboxAgeRating
+            // lnkNewAgeRating
             // 
-            this.txtboxAgeRating.Location = new System.Drawing.Point(597, 118);
-            this.txtboxAgeRating.Name = "txtboxAgeRating";
-            this.txtboxAgeRating.Size = new System.Drawing.Size(100, 20);
-            this.txtboxAgeRating.TabIndex = 17;
-            // 
-            // txtboxCountry
-            // 
-            this.txtboxCountry.Location = new System.Drawing.Point(597, 92);
-            this.txtboxCountry.Name = "txtboxCountry";
-            this.txtboxCountry.Size = new System.Drawing.Size(100, 20);
-            this.txtboxCountry.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(514, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Страна";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(514, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Возр. рейтинг";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(514, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Жанр";
+            this.lnkNewAgeRating.AutoSize = true;
+            this.lnkNewAgeRating.Location = new System.Drawing.Point(238, 256);
+            this.lnkNewAgeRating.Name = "lnkNewAgeRating";
+            this.lnkNewAgeRating.Size = new System.Drawing.Size(92, 13);
+            this.lnkNewAgeRating.TabIndex = 31;
+            this.lnkNewAgeRating.TabStop = true;
+            this.lnkNewAgeRating.Text = "Добавить новый";
+            this.lnkNewAgeRating.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkNewAgeRating_LinkClicked);
             // 
             // AddDiskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 351);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnAddData);
+            this.ClientSize = new System.Drawing.Size(494, 351);
+            this.Controls.Add(this.lnkNewAgeRating);
+            this.Controls.Add(this.lnkNewCountry);
+            this.Controls.Add(this.lnkNewGenre);
             this.Controls.Add(this.cmbxAgerating);
             this.Controls.Add(this.cmbxCounrty);
             this.Controls.Add(this.cmbxGenre);
-            this.Controls.Add(this.txtboxCountry);
             this.Controls.Add(this.lblCountry);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtboxAgeRating);
             this.Controls.Add(this.txtboxYear);
             this.Controls.Add(this.txtboxDirector);
             this.Controls.Add(this.rTxtBoxSynopsis);
@@ -303,14 +274,14 @@
             this.Controls.Add(this.lblDirector);
             this.Controls.Add(this.lblGenre);
             this.Controls.Add(this.lblSynopsis);
-            this.Controls.Add(this.txtboxGenre);
             this.Controls.Add(this.txtboxName);
             this.Controls.Add(this.txtboxCount);
             this.Controls.Add(this.lblNameDisk);
             this.Controls.Add(this.lblCountDisk);
             this.Controls.Add(this.lblDiskPrice);
             this.Controls.Add(this.txtboxPrice);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AddDiskForm";
             this.Text = "Добавление диска";
             this.Load += new System.EventHandler(this.AddDiskForm_Load);
@@ -337,15 +308,11 @@
         public System.Windows.Forms.TextBox txtboxYear;
         public System.Windows.Forms.Button btnAdd;
         public System.Windows.Forms.Label lblCountry;
-        private System.Windows.Forms.ComboBox cmbxGenre;
-        private System.Windows.Forms.ComboBox cmbxCounrty;
-        private System.Windows.Forms.ComboBox cmbxAgerating;
-        private System.Windows.Forms.Button btnAddData;
-        public System.Windows.Forms.TextBox txtboxGenre;
-        public System.Windows.Forms.TextBox txtboxAgeRating;
-        public System.Windows.Forms.TextBox txtboxCountry;
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.ComboBox cmbxGenre;
+        public System.Windows.Forms.ComboBox cmbxCounrty;
+        public System.Windows.Forms.ComboBox cmbxAgerating;
+        private System.Windows.Forms.LinkLabel lnkNewGenre;
+        private System.Windows.Forms.LinkLabel lnkNewCountry;
+        private System.Windows.Forms.LinkLabel lnkNewAgeRating;
     }
 }

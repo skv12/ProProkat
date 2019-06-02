@@ -66,11 +66,11 @@ namespace ProProkat
             AddDiskForm edit_form = new AddDiskForm();
             edit_form.txtboxName.Text = mv.name;
             edit_form.rTxtBoxSynopsis.Text = mv.synopsis;
-            edit_form.txtboxGenre.Text = mv.genres;
+            edit_form.cmbxGenre.Text = mv.genres;
             edit_form.txtboxDirector.Text = mv.director;
             edit_form.txtboxYear.Text = mv.year;
-            edit_form.txtboxAgeRating.Text = mv.agerating;
-            edit_form.txtboxCountry.Text = mv.country;
+            edit_form.cmbxAgerating.Text = mv.agerating;
+            edit_form.cmbxCounrty.Text = mv.country;
             edit_form.txtboxPrice.Text = Convert.ToString(mv.price);
             edit_form.txtboxCount.Text = Convert.ToString(mv.count);
 

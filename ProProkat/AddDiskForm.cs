@@ -34,11 +34,11 @@ namespace ProProkat
                 {
                     name = txtboxName.Text,
                     synopsis = rTxtBoxSynopsis.Text,
-                    genres = txtboxGenre.Text,
+                    genres = cmbxGenre.Text,
                     director = txtboxDirector.Text,
                     year = txtboxYear.Text,
-                    agerating = txtboxAgeRating.Text,
-                    country = txtboxCountry.Text,
+                    agerating = cmbxAgerating.Text,
+                    country = cmbxCounrty.Text,
                     price = Convert.ToInt32(txtboxPrice.Text),
                     count = Convert.ToInt32(txtboxCount.Text),
                 };
@@ -54,11 +54,11 @@ namespace ProProkat
                         movies mv2 = db.movies.Where(c => c.name == name2).FirstOrDefault();
                         mv2.name = txtboxName.Text;
                         mv2.synopsis = rTxtBoxSynopsis.Text;
-                        mv2.genres = txtboxGenre.Text;
+                        mv2.genres = cmbxGenre.Text;
                         mv2.director = txtboxDirector.Text;
                         mv2.year = txtboxYear.Text;
-                        mv2.agerating = txtboxAgeRating.Text;
-                        mv2.country = txtboxCountry.Text;
+                        mv2.agerating = cmbxAgerating.Text;
+                        mv2.country = cmbxCounrty.Text;
                         mv2.price = Convert.ToInt32(txtboxPrice.Text);
                         mv2.count = Convert.ToInt32(txtboxCount.Text);
 
@@ -87,42 +87,6 @@ namespace ProProkat
                 btnAdd.Text = "Редакт.";
                 this.Text = "Редактирование диска";
             }
-        }
-
-        private void btnAddData_Click(object sender, EventArgs e)
-        {
-            pp_dbEntities db = new pp_dbEntities();
-            if (txtboxGenre.Text != "")
-            {
-                genres gr = new genres
-                {
-                    name = txtboxGenre.Text
-                };
-                db.genres.Add(gr);
-                db.SaveChanges();
-            }
-            if (txtboxCountry.Text != "")
-            {
-                country cr = new country
-                {
-                    name = txtboxCountry.Text
-                };
-                db.country.Add(cr);
-                db.SaveChanges();
-            }
-            if (txtboxAgeRating.Text != "")
-            {
-                agerating ar = new agerating
-                {
-                    name = txtboxAgeRating.Text
-                };
-                db.agerating.Add(ar);
-                db.SaveChanges();
-            }
-            fillchkbox();
-            txtboxAgeRating.Text = "";
-            txtboxCountry.Text = "";
-            txtboxGenre.Text = "";
         }
 
         public void fillchkbox() // Заполнение комбобокса данными из базы данных
@@ -199,6 +163,30 @@ namespace ProProkat
         private void cmbxAgerating_Click(object sender, EventArgs e)
         {
             ((ComboBox)(sender)).DroppedDown = true;
+        }
+
+        private void LnkNewGenre_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AddNewDiskData edit_form = new AddNewDiskData();
+            edit_form.lblData.Text = "Жанр";
+            edit_form.ShowDialog();
+            fillchkbox();
+        }
+
+        private void LnkNewCountry_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AddNewDiskData edit_form = new AddNewDiskData();
+            edit_form.lblData.Text = "Страна";
+            edit_form.ShowDialog();
+            fillchkbox();
+        }
+
+        private void LnkNewAgeRating_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AddNewDiskData edit_form = new AddNewDiskData();
+            edit_form.lblData.Text = "Возрастной рейтинг";
+            edit_form.ShowDialog();
+            fillchkbox();
         }
     }
 }

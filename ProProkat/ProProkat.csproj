@@ -86,6 +86,12 @@
     <Compile Include="AddDiskForm.Designer.cs">
       <DependentUpon>AddDiskForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddNewDiskData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewDiskData.Designer.cs">
+      <DependentUpon>AddNewDiskData.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddDiskForm.resx">
       <DependentUpon>AddDiskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewDiskData.resx">
+      <DependentUpon>AddNewDiskData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddOrderForm.resx">
       <DependentUpon>AddOrderForm.cs</DependentUpon>
