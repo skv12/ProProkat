@@ -26,7 +26,7 @@ CREATE TABLE `agerating` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,7 @@ CREATE TABLE `agerating` (
 
 LOCK TABLES `agerating` WRITE;
 /*!40000 ALTER TABLE `agerating` DISABLE KEYS */;
-INSERT INTO `agerating` VALUES (1,'12'),(2,'18'),(3,'16'),(4,'14');
+INSERT INTO `agerating` VALUES (1,'12'),(2,'18'),(3,'16'),(4,'14'),(5,'6');
 /*!40000 ALTER TABLE `agerating` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +86,7 @@ CREATE TABLE `country` (
 
 LOCK TABLES `country` WRITE;
 /*!40000 ALTER TABLE `country` DISABLE KEYS */;
-INSERT INTO `country` VALUES (1,'Россия'),(2,'США'),(3,'Франция'),(4,'СССР'),(5,'Вьетнам');
+INSERT INTO `country` VALUES (1,'Россия'),(2,'США'),(3,'Франция'),(4,'СССР');
 /*!40000 ALTER TABLE `country` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,7 +101,7 @@ CREATE TABLE `genres` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +133,7 @@ CREATE TABLE `movies` (
   `director` varchar(60) DEFAULT NULL,
   `country` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `movies` (
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
-INSERT INTO `movies` VALUES (18,'Шрек',941496,100,'','','','','',''),(19,'Спасатели Малибу',3091,40,'','','','','',''),(20,'Дракула',123070,5,'','','','','',''),(21,'Терминатор',3227,20,'3','','','','','');
+INSERT INTO `movies` VALUES (18,'Шрек',941496,100,'','12','Комедия','','','США'),(19,'Спасатели Малибу',3090,40,'','16','Комедия','','','США'),(20,'Дракула',123070,5,'','','','','',''),(22,'Мстители',10,200,'','12','Боевик','','','Россия');
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,8 +161,9 @@ CREATE TABLE `orders` (
   `rent` date NOT NULL,
   `disklist` varchar(255) NOT NULL,
   `deposit` varchar(60) NOT NULL,
+  `closed_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +172,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,'Скрябин Андрей','1','2019-05-27','2019-05-30','18 2 ','200'),(2,'Скрябин Андрей','1','2019-05-27','2019-06-16','18 3 19 2 20 1 ','385'),(3,'Шамаев Semen','1','2019-05-27','2019-06-19','18 12 19 3 ','1320');
+INSERT INTO `orders` VALUES (1,'Скрябин Андрей','1','2019-05-27','2019-05-30','18 2 ','200',NULL),(2,'Скрябин Андрей','1','2019-05-27','2019-06-16','18 3 19 2 20 1 ','385',NULL),(3,'Шамаев Semen','1','2019-05-27','2019-06-19','18 12 19 3 ','1320',NULL),(4,'Винокуров Сандал','0','2019-06-03','2019-06-10','19 1 ','40','2019-06-03');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -184,4 +185,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-27  3:21:10
+-- Dump completed on 2019-06-03  1:05:30
