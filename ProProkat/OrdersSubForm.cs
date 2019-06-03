@@ -22,10 +22,16 @@ namespace ProProkat
             pp_dbEntities or = new pp_dbEntities();
             dataGridView1.DataSource = or.orders.ToList<orders>();
 
+
+
             dataGridView1.Columns[0].HeaderText = "ФИО клиента";
             dataGridView1.Columns[1].HeaderText = "Статус";
             dataGridView1.Columns[2].HeaderText = "Дата заказа";
             dataGridView1.Columns[3].HeaderText = "Срок";
+            //dataGridView1.Columns[1].Visible = false;
+            for (int i = 4; i <= 8; i++)
+                dataGridView1.Columns[i].Visible = false;
+
             if (chkboxClosedOrder.Checked == true)
             {
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -50,7 +56,44 @@ namespace ProProkat
         {
             zapis();
         }
+        public void proverka()
+        {
+            pp_dbEntities db = new pp_dbEntities();  // Добавление в список просроченных
+            var Orders = db.orders.Where(c => c.status == "1"); // Ищем только среди действующих заказов.
+            orders or = Orders.Where(c => c.rent < DateTime.Now).FirstOrDefault();
 
+            if (or != null) // Если есть просроченный заказ то меняем статус на 2
+            {
+                or.status = 2.ToString();
+                db.Entry(or).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+            
+            if (Orders.Where(c => c.rent < DateTime.Now).FirstOrDefault() != null) // Если есть еще просроченные заказы, то вызываем функцию снова.
+                proverka(); // Рекурсия о_О
+            
+
+
+
+            DateTime D = DateTime.Now;               // Добавление в список проваленных
+            D = D.AddDays(-14);
+            var Orders2 = db.orders.Where(c => c.status == "2"); // Ищем только среди просроченных заказов.
+            orders or2 = Orders2.Where(c => c.rent < D).FirstOrDefault();
+            if (or2 != null) // Если есть проваленный заказ то меняем статус на 3
+            {
+                or2.status = 3.ToString();
+                or2.closed_date = DateTime.Now;
+
+                clients cl = db.clients.Where(c => c.id == or2.clid).FirstOrDefault();
+                cl.blackliststatus = 1;
+                db.Entry(cl).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                db.Entry(or2).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges(); 
+             }
+            if (Orders2.Where(c => c.rent < D).FirstOrDefault() != null)  // Если есть еще проваленные заказы, то вызываем функцию снова.
+                proverka(); // Рекурсия о_О
+        }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             pp_dbEntities db = new pp_dbEntities();

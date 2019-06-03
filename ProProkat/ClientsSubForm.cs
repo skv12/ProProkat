@@ -19,8 +19,8 @@ namespace ProProkat
         }
         public void zapis()
         {
-            pp_dbEntities c = new pp_dbEntities();
-            dataGridView1.DataSource = c.clients.ToList<clients>();
+            pp_dbEntities db = new pp_dbEntities();
+            dataGridView1.DataSource = db.clients.OrderBy(c => c.fullname).ToList<clients>();
             dataGridView1.Columns[0].HeaderText = "ФИО";
             dataGridView1.Columns[1].HeaderText = "Адрес";
             dataGridView1.Columns[2].HeaderText = "Контактный телефон";

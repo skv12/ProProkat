@@ -37,12 +37,12 @@ namespace ProProkat
         public void fillchkbox() // Заполнение комбобоксов данными из бд и время.
         {
             pp_dbEntities db = new pp_dbEntities();
-            cmbxClient.DataSource = db.clients.ToList<clients>();
+            cmbxClient.DataSource = db.clients.OrderBy(c => c.fullname).ToList<clients>();
             cmbxClient.ValueMember = "Id";
             cmbxClient.DisplayMember = "fullname";
             clientcheck();
 
-            cmbxDisk.DataSource = db.movies.ToList<movies>();
+            cmbxDisk.DataSource = db.movies.OrderBy(c => c.name).ToList<movies>();
             cmbxDisk.ValueMember = "Id";
             cmbxDisk.DisplayMember = "name";
             
@@ -125,11 +125,13 @@ namespace ProProkat
                 pp_dbEntities db = new pp_dbEntities();
                 movies mv = db.movies.Where(c => c.name == cmbxDisk.Text).FirstOrDefault();
                 int cnt = Convert.ToInt32((txtboxDiskCount.Text));
+
                 if (mv.count < cnt)
                 {
                     lbldskcount.Visible = false;
                     label8.Text = "Закажите не более " + lbldskcount.Text + " дисков";
                 }
+
                 else
                 {
                     mv.count = mv.count - cnt;

@@ -63,6 +63,7 @@
           <Property Name="disklist" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="deposit" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="closed_date" Type="date" />
+          <Property Name="clid" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Хранилище pp_dbModelContainer">
           <EntitySet Name="agerating" EntityType="Self.agerating" Schema="pp_db" store:Type="Tables" />
@@ -113,6 +114,7 @@
           <Property Name="deposit" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="closed_date" Type="DateTime" />
+          <Property Name="clid" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="pp_dbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="clients" EntityType="Self.clients" />
@@ -163,6 +165,7 @@
           <EntitySetMapping Name="orders">
             <EntityTypeMapping TypeName="pp_dbModel.orders">
               <MappingFragment StoreEntitySet="orders">
+                <ScalarProperty Name="clid" ColumnName="clid" />
                 <ScalarProperty Name="closed_date" ColumnName="closed_date" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="client" ColumnName="client" />

@@ -78,5 +78,16 @@ namespace ProProkat
             Form show_form = new CreateReportForm();
             show_form.ShowDialog();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            OrdersSubForm frm = new OrdersSubForm();
+            frm.proverka();
+        }
     }
 }

@@ -22,5 +22,6 @@ namespace ProProkat
         public string deposit { get; set; }
         public int id { get; set; }
         public Nullable<System.DateTime> closed_date { get; set; }
+        public int clid { get; set; }
     }
 }

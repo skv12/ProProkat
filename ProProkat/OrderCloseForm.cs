@@ -24,10 +24,15 @@ namespace ProProkat
             pp_dbEntities db = new pp_dbEntities();
             orders or = db.orders.Where(c => c.id == id2).FirstOrDefault();
             or.closed_date = DateTime.Now;
-            or.status = 0.ToString();
-            db.Entry(or).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
-            this.Close();
+            if (or.status == "1" || or.status == "2")
+            {
+                or.status = 0.ToString();
+                db.Entry(or).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                this.Close();
+            }
+            else
+                MessageBox.Show("Заказ уже закрыт");
         }
     }
 }
