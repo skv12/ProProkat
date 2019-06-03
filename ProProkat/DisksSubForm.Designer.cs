@@ -64,6 +64,7 @@
             this.btnSearchDisk.TabIndex = 2;
             this.btnSearchDisk.Text = "Поиск";
             this.btnSearchDisk.UseVisualStyleBackColor = true;
+            this.btnSearchDisk.Click += new System.EventHandler(this.btnSearchDisk_Click);
             // 
             // dataGridView1
             // 

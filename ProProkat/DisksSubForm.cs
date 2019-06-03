@@ -78,5 +78,11 @@ namespace ProProkat
             edit_form.ShowDialog();
             zapis();
         }
+
+        private void btnSearchDisk_Click(object sender, EventArgs e)
+        {
+            Form search_form = new DiskSearch();
+            search_form.ShowDialog();
+        }
     }
 }

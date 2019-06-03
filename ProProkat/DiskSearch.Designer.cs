@@ -36,11 +36,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbSearchGenre = new System.Windows.Forms.TextBox();
             this.tbSearchDirector = new System.Windows.Forms.TextBox();
             this.tbSearchYear = new System.Windows.Forms.TextBox();
-            this.tbSearchRating = new System.Windows.Forms.TextBox();
-            this.tbSearchCountry = new System.Windows.Forms.TextBox();
+            this.cmbxGenre = new System.Windows.Forms.ComboBox();
+            this.cmbxPageRating = new System.Windows.Forms.ComboBox();
+            this.cmbxCounrty = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -51,6 +51,7 @@
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Поиск";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tbSearchName
             // 
@@ -113,13 +114,6 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Страна";
             // 
-            // tbSearchGenre
-            // 
-            this.tbSearchGenre.Location = new System.Drawing.Point(131, 57);
-            this.tbSearchGenre.Name = "tbSearchGenre";
-            this.tbSearchGenre.Size = new System.Drawing.Size(345, 20);
-            this.tbSearchGenre.TabIndex = 8;
-            // 
             // tbSearchDirector
             // 
             this.tbSearchDirector.Location = new System.Drawing.Point(131, 85);
@@ -134,30 +128,40 @@
             this.tbSearchYear.Size = new System.Drawing.Size(345, 20);
             this.tbSearchYear.TabIndex = 10;
             // 
-            // tbSearchRating
+            // cmbxGenre
             // 
-            this.tbSearchRating.Location = new System.Drawing.Point(131, 137);
-            this.tbSearchRating.Name = "tbSearchRating";
-            this.tbSearchRating.Size = new System.Drawing.Size(345, 20);
-            this.tbSearchRating.TabIndex = 11;
+            this.cmbxGenre.FormattingEnabled = true;
+            this.cmbxGenre.Location = new System.Drawing.Point(131, 58);
+            this.cmbxGenre.Name = "cmbxGenre";
+            this.cmbxGenre.Size = new System.Drawing.Size(345, 21);
+            this.cmbxGenre.TabIndex = 11;
             // 
-            // tbSearchCountry
+            // cmbxPageRating
             // 
-            this.tbSearchCountry.Location = new System.Drawing.Point(131, 163);
-            this.tbSearchCountry.Name = "tbSearchCountry";
-            this.tbSearchCountry.Size = new System.Drawing.Size(345, 20);
-            this.tbSearchCountry.TabIndex = 12;
+            this.cmbxPageRating.FormattingEnabled = true;
+            this.cmbxPageRating.Location = new System.Drawing.Point(131, 137);
+            this.cmbxPageRating.Name = "cmbxPageRating";
+            this.cmbxPageRating.Size = new System.Drawing.Size(345, 21);
+            this.cmbxPageRating.TabIndex = 12;
+            // 
+            // cmbxCounrty
+            // 
+            this.cmbxCounrty.FormattingEnabled = true;
+            this.cmbxCounrty.Location = new System.Drawing.Point(131, 164);
+            this.cmbxCounrty.Name = "cmbxCounrty";
+            this.cmbxCounrty.Size = new System.Drawing.Size(345, 21);
+            this.cmbxCounrty.TabIndex = 13;
             // 
             // DiskSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 291);
-            this.Controls.Add(this.tbSearchCountry);
-            this.Controls.Add(this.tbSearchRating);
+            this.Controls.Add(this.cmbxCounrty);
+            this.Controls.Add(this.cmbxPageRating);
+            this.Controls.Add(this.cmbxGenre);
             this.Controls.Add(this.tbSearchYear);
             this.Controls.Add(this.tbSearchDirector);
-            this.Controls.Add(this.tbSearchGenre);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -183,10 +187,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbSearchGenre;
         private System.Windows.Forms.TextBox tbSearchDirector;
         private System.Windows.Forms.TextBox tbSearchYear;
-        private System.Windows.Forms.TextBox tbSearchRating;
-        private System.Windows.Forms.TextBox tbSearchCountry;
+        private System.Windows.Forms.ComboBox cmbxGenre;
+        private System.Windows.Forms.ComboBox cmbxPageRating;
+        private System.Windows.Forms.ComboBox cmbxCounrty;
     }
 }

@@ -82,6 +82,7 @@ namespace ProProkat
                 else
                     lblbl.Text = "Клиент находится в черном списке";
                 btnAddOrder.Visible = false;
+                btnAddDisk.Visible = false;
             }
             else
             {
@@ -96,12 +97,14 @@ namespace ProProkat
                     {
                         lblbl.Text = "";
                         btnAddOrder.Visible = true;
+                        btnAddDisk.Visible = true;
                     }
                 }
                 else
                 {
                     lblbl.Text = "";
                     btnAddOrder.Visible = true;
+                    btnAddDisk.Visible = true;
                 }
             }
         }
@@ -112,7 +115,7 @@ namespace ProProkat
         private double price = 0;
         private bool dobavlen = false;
         private string SpisokDiskov;
-
+        private bool diskadded = false;
         public void btnAddDisk_Click(object sender, EventArgs e) // Добавление дисков в заказ
         {
             if (txtboxDiskCount.Text == "" || Convert.ToInt32(txtboxDiskCount.Text) == 0)
@@ -170,7 +173,7 @@ namespace ProProkat
                 SpisokDiskov = "";
                 for (int j = 0; j < i; j++)
                     SpisokDiskov = SpisokDiskov + DiskList[j].ToString() + " " + DiskCount[j].ToString() + " ";
-
+                diskadded = true;
                 string dl = "";
                 string s = SpisokDiskov;
                 bool a = true;
@@ -261,7 +264,7 @@ namespace ProProkat
         }
 
 
-        
+        private bool orderadded = false;
         private void btnAddOrder_Click(object sender, EventArgs e) // Добавление заказа
         {
             if (cmbxClient.Text == "" || lblRent.Text == "" || !dobavlen)
@@ -293,6 +296,7 @@ namespace ProProkat
                     }
                     
                 }
+                orderadded = true;
                 this.Close();
             }
         } 
@@ -313,17 +317,27 @@ namespace ProProkat
                 {
                     btnAddOrder.Visible = false;
                     if (cl.blackliststatus == 0)
+                    {
                         lblbl.Text = "Максимальный срок заказа 14 дней";
+                        btnAddDisk.Visible = true;
+                    }
                     else
+                    {
                         lblbl.Text = "Клиент находится в черном списке" + '\n' + "Максимальный срок заказа 14 дней";
+                        btnAddDisk.Visible = false;
+                    }
                 }
                 else
                 {
-                    
+
                     if (cl.blackliststatus == 1)
+                    {
                         lblbl.Text = "Клиент находится в черном списке";
+                        btnAddDisk.Visible = false;
+                    }
                     else
                     {
+                        btnAddDisk.Visible = true;
                         btnAddOrder.Visible = true;
                         lblbl.Text = "";
                     }
@@ -356,6 +370,31 @@ namespace ProProkat
             if (!Char.IsDigit(number) && e.KeyChar != 8)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void AddOrderForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!diskadded && !orderadded)
+            { 
+                pp_dbEntities db = new pp_dbEntities();
+                string s = SpisokDiskov;
+                int id1 = 0;
+                int id2 = 0;
+                String[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 0; i < words.Length - 1; i += 2)
+                {
+                    int[] array = words[i].Where(x => char.IsNumber(x)).Select(x => x - 48).ToArray();
+                    int[] array2 = words[i + 1].Where(x => char.IsNumber(x)).Select(x => x - 48).ToArray();
+                    for (int j = 0; j < array.Length; j++)
+                        id1 = id1 * 10 + array[j];
+                    for (int j = 0; j < array2.Length; j++)
+                        id2 = id2 * 10 + array2[j];
+                    movies mv = db.movies.Where(c => c.Id == id1).FirstOrDefault();
+                    mv.count += id2;
+                    db.Entry(mv).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
             }
         }
     }
