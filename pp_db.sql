@@ -142,7 +142,7 @@ CREATE TABLE `movies` (
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
-INSERT INTO `movies` VALUES (18,'Шрек',941496,100,'','12','Комедия','','','США'),(19,'Спасатели Малибу',3090,40,'','16','Комедия','','','США'),(20,'Дракула',123070,5,'','','','','',''),(22,'Мстители',10,200,'','12','Боевик','','','Россия');
+INSERT INTO `movies` VALUES (18,'Шрек',941490,100,'','12','Комедия','','','США'),(19,'Спасатели Малибу',3085,40,'','16','Комедия','','','США'),(20,'Дракула',123063,5,'','','','','',''),(22,'Мстители',10,200,'','12','Боевик','','','Россия');
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,13 +157,14 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `client` varchar(60) NOT NULL,
   `status` varchar(60) NOT NULL,
-  `date` date NOT NULL,
-  `rent` date NOT NULL,
+  `date` date DEFAULT NULL,
+  `rent` date DEFAULT NULL,
   `disklist` varchar(255) NOT NULL,
   `deposit` varchar(60) NOT NULL,
   `closed_date` date DEFAULT NULL,
+  `clid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,7 +173,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,'Скрябин Андрей','1','2019-05-27','2019-05-30','18 2 ','200',NULL),(2,'Скрябин Андрей','1','2019-05-27','2019-06-16','18 3 19 2 20 1 ','385',NULL),(3,'Шамаев Semen','1','2019-05-27','2019-06-19','18 12 19 3 ','1320',NULL),(4,'Винокуров Сандал','0','2019-06-03','2019-06-10','19 1 ','40','2019-06-03');
+INSERT INTO `orders` VALUES (1,'Скрябин Андрей','1','2019-05-27','2019-05-30','18 2 ','200',NULL,71),(2,'Скрябин Андрей','0','2019-05-27','2019-06-16','18 3 19 2 20 1 ','385','2019-06-03',71),(3,'Шамаев Semen','1','2019-05-27','2019-06-19','18 12 19 3 ','1320',NULL,27),(4,'Винокуров Сандал','0','2019-06-03','2019-06-10','19 1 ','40','2019-06-03',18),(5,'Винокуров Сандал','0','2019-06-03','2019-06-06','19 1 20 1 ','45','2019-06-03',18);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -185,4 +186,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-03  1:05:30
+-- Dump completed on 2019-06-03 14:16:50

@@ -16,8 +16,8 @@ namespace ProProkat
     {
         public string client { get; set; }
         public string status { get; set; }
-        public System.DateTime date { get; set; }
-        public System.DateTime rent { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
+        public Nullable<System.DateTime> rent { get; set; }
         public string disklist { get; set; }
         public string deposit { get; set; }
         public int id { get; set; }

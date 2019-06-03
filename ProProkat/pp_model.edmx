@@ -58,8 +58,8 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="client" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="60" Nullable="false" />
-          <Property Name="date" Type="date" Nullable="false" />
-          <Property Name="rent" Type="date" Nullable="false" />
+          <Property Name="date" Type="date" />
+          <Property Name="rent" Type="date" />
           <Property Name="disklist" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="deposit" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="closed_date" Type="date" />
@@ -107,8 +107,8 @@
           </Key>
           <Property Name="client" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="status" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="date" Type="DateTime" Nullable="false" />
-          <Property Name="rent" Type="DateTime" Nullable="false" />
+          <Property Name="date" Type="DateTime" />
+          <Property Name="rent" Type="DateTime" />
           <Property Name="disklist" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="deposit" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" />
