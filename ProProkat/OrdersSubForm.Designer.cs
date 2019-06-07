@@ -36,9 +36,9 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(643, 347);
+            this.btnRefresh.Location = new System.Drawing.Point(688, 12);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(118, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 25);
             this.btnRefresh.TabIndex = 0;
             this.btnRefresh.Text = "Обновить";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -48,17 +48,17 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(59, 47);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(511, 323);
+            this.dataGridView1.Size = new System.Drawing.Size(530, 420);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // chkboxClosedOrder
             // 
             this.chkboxClosedOrder.AutoSize = true;
-            this.chkboxClosedOrder.Location = new System.Drawing.Point(576, 47);
+            this.chkboxClosedOrder.Location = new System.Drawing.Point(545, 415);
             this.chkboxClosedOrder.Name = "chkboxClosedOrder";
             this.chkboxClosedOrder.Size = new System.Drawing.Size(218, 17);
             this.chkboxClosedOrder.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(775, 480);
             this.Controls.Add(this.chkboxClosedOrder);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnRefresh);

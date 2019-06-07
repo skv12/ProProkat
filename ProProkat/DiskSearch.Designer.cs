@@ -41,6 +41,8 @@
             this.cmbxGenre = new System.Windows.Forms.ComboBox();
             this.cmbxPageRating = new System.Windows.Forms.ComboBox();
             this.cmbxCounrty = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -135,6 +137,8 @@
             this.cmbxGenre.Name = "cmbxGenre";
             this.cmbxGenre.Size = new System.Drawing.Size(345, 21);
             this.cmbxGenre.TabIndex = 11;
+            this.cmbxGenre.Click += new System.EventHandler(this.cmbxGenre_Click);
+            this.cmbxGenre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxGenre_KeyPress);
             // 
             // cmbxPageRating
             // 
@@ -143,6 +147,8 @@
             this.cmbxPageRating.Name = "cmbxPageRating";
             this.cmbxPageRating.Size = new System.Drawing.Size(345, 21);
             this.cmbxPageRating.TabIndex = 12;
+            this.cmbxPageRating.Click += new System.EventHandler(this.cmbxPageRating_Click);
+            this.cmbxPageRating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxPageRating_KeyPress);
             // 
             // cmbxCounrty
             // 
@@ -151,12 +157,24 @@
             this.cmbxCounrty.Name = "cmbxCounrty";
             this.cmbxCounrty.Size = new System.Drawing.Size(345, 21);
             this.cmbxCounrty.TabIndex = 13;
+            this.cmbxCounrty.Click += new System.EventHandler(this.cmbxCounrty_Click);
+            this.cmbxCounrty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbxCounrty_KeyPress);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(555, 31);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(492, 448);
+            this.dataGridView1.TabIndex = 14;
             // 
             // DiskSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 291);
+            this.ClientSize = new System.Drawing.Size(1081, 519);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmbxCounrty);
             this.Controls.Add(this.cmbxPageRating);
             this.Controls.Add(this.cmbxGenre);
@@ -171,7 +189,8 @@
             this.Controls.Add(this.tbSearchName);
             this.Controls.Add(this.btnSearch);
             this.Name = "DiskSearch";
-            this.Text = "DiskSearch";
+            this.Text = "Поиск дискоа";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +211,6 @@
         private System.Windows.Forms.ComboBox cmbxGenre;
         private System.Windows.Forms.ComboBox cmbxPageRating;
         private System.Windows.Forms.ComboBox cmbxCounrty;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

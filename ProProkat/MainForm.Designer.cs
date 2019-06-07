@@ -69,9 +69,9 @@
             // 
             // BtnNewOrder
             // 
-            this.BtnNewOrder.Location = new System.Drawing.Point(790, 513);
+            this.BtnNewOrder.Location = new System.Drawing.Point(805, 517);
             this.BtnNewOrder.Name = "BtnNewOrder";
-            this.BtnNewOrder.Size = new System.Drawing.Size(127, 23);
+            this.BtnNewOrder.Size = new System.Drawing.Size(127, 25);
             this.BtnNewOrder.TabIndex = 1;
             this.BtnNewOrder.Text = "Новый заказ";
             this.BtnNewOrder.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@
             // 
             // BtnClientList
             // 
-            this.BtnClientList.Location = new System.Drawing.Point(27, 51);
+            this.BtnClientList.Location = new System.Drawing.Point(12, 28);
             this.BtnClientList.Name = "BtnClientList";
             this.BtnClientList.Size = new System.Drawing.Size(109, 23);
             this.BtnClientList.TabIndex = 2;
@@ -89,7 +89,7 @@
             // 
             // BtnOrderList
             // 
-            this.BtnOrderList.Location = new System.Drawing.Point(27, 80);
+            this.BtnOrderList.Location = new System.Drawing.Point(12, 57);
             this.BtnOrderList.Name = "BtnOrderList";
             this.BtnOrderList.Size = new System.Drawing.Size(109, 23);
             this.BtnOrderList.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             // BtnDiskList
             // 
-            this.BtnDiskList.Location = new System.Drawing.Point(27, 109);
+            this.BtnDiskList.Location = new System.Drawing.Point(12, 86);
             this.BtnDiskList.Name = "BtnDiskList";
             this.BtnDiskList.Size = new System.Drawing.Size(109, 23);
             this.BtnDiskList.TabIndex = 4;
@@ -109,9 +109,9 @@
             // 
             // BtnCreateReport
             // 
-            this.BtnCreateReport.Location = new System.Drawing.Point(27, 513);
+            this.BtnCreateReport.Location = new System.Drawing.Point(12, 517);
             this.BtnCreateReport.Name = "BtnCreateReport";
-            this.BtnCreateReport.Size = new System.Drawing.Size(152, 23);
+            this.BtnCreateReport.Size = new System.Drawing.Size(152, 25);
             this.BtnCreateReport.TabIndex = 5;
             this.BtnCreateReport.Text = "Создать отчет по работе";
             this.BtnCreateReport.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@
             // 
             this.panel.Location = new System.Drawing.Point(157, 28);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(775, 479);
+            this.panel.Size = new System.Drawing.Size(775, 480);
             this.panel.TabIndex = 6;
             // 
             // timer1

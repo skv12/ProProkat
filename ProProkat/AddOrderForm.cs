@@ -115,7 +115,6 @@ namespace ProProkat
         private double price = 0;
         private bool dobavlen = false;
         private string SpisokDiskov;
-        private bool diskadded = false;
         public void btnAddDisk_Click(object sender, EventArgs e) // Добавление дисков в заказ
         {
             if (txtboxDiskCount.Text == "" || Convert.ToInt32(txtboxDiskCount.Text) == 0)
@@ -173,7 +172,6 @@ namespace ProProkat
                 SpisokDiskov = "";
                 for (int j = 0; j < i; j++)
                     SpisokDiskov = SpisokDiskov + DiskList[j].ToString() + " " + DiskCount[j].ToString() + " ";
-                diskadded = true;
                 string dl = "";
                 string s = SpisokDiskov;
                 bool a = true;
@@ -375,7 +373,7 @@ namespace ProProkat
 
         private void AddOrderForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (!diskadded && !orderadded)
+            if (SpisokDiskov != null && !orderadded)
             { 
                 pp_dbEntities db = new pp_dbEntities();
                 string s = SpisokDiskov;

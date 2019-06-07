@@ -32,25 +32,26 @@
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
             this.btnCreateReport = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dateTimePickerFrom
             // 
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(12, 12);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(12, 25);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerFrom.TabIndex = 0;
             // 
             // dateTimePickerTo
             // 
-            this.dateTimePickerTo.Location = new System.Drawing.Point(254, 12);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(12, 86);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerTo.TabIndex = 1;
             // 
             // btnCreateReport
             // 
-            this.btnCreateReport.Location = new System.Drawing.Point(332, 154);
+            this.btnCreateReport.Location = new System.Drawing.Point(90, 172);
             this.btnCreateReport.Name = "btnCreateReport";
             this.btnCreateReport.Size = new System.Drawing.Size(122, 23);
             this.btnCreateReport.TabIndex = 2;
@@ -61,23 +62,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(232, 88);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.label1.Text = "От";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "До";
             // 
             // CreateReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 205);
+            this.ClientSize = new System.Drawing.Size(230, 207);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCreateReport);
             this.Controls.Add(this.dateTimePickerTo);
             this.Controls.Add(this.dateTimePickerFrom);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CreateReportForm";
-            this.Text = "CreateReportForm";
+            this.Text = "Создание отчета";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,5 +102,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
         private System.Windows.Forms.Button btnCreateReport;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

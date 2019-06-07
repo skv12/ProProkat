@@ -31,36 +31,141 @@ namespace ProProkat
             cmbxPageRating.DataSource = db.agerating.OrderBy(c => c.name).ToList<agerating>();
             cmbxPageRating.ValueMember = "Id";
             cmbxPageRating.DisplayMember = "name";
+
+            cmbxCounrty.SelectedValue = "";
+            cmbxPageRating.SelectedValue = "";
+            cmbxGenre.SelectedValue = "";
+
         }
 
+        public List<movies> mv;
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            /*TableContext db1 = new TableContext();
-           db1.Pictures.Include("Authors").Where(x => x.Year.Year==dtPicker.Value.Year).Load();
-           dGVPicturesList.DataSource = db1.Pictures.Local.ToBindingList();*/
-
-            //var filter = db.Pictures.Include("Authors").Where(x => x.Name.Contains(tbPicFilter.Text)).Where(x => x.Authors.Name.Contains(tbPicFilter2.Text)).Where(x => x.Year.Year == dtPicker.Value.Year).ToList();
-            /*
             pp_dbEntities db = new pp_dbEntities();
-            foreach (movies c in db.movies)
-            {
-                if (tbSearchName.Text != "")
-                    var mv = db.movies.Where(c => c.name.Contains(tbSearchName.Text)).ToList();
-            }
+            
+                if (cmbxPageRating.Text != "" && cmbxPageRating.Text != null)
+                {
+                    if (tbSearchYear.Text != "" && tbSearchYear.Text != null)
+                    {
+                        mv = db.movies.
+                        Where<movies>(x => x.name.Contains(tbSearchName.Text)).
+                        Where<movies>(x => x.agerating == cmbxPageRating.Text).
+                        Where<movies>(x => x.genres.Contains(cmbxGenre.Text)).
+                        Where<movies>(x => x.director.Contains(tbSearchDirector.Text)).
+                        Where<movies>(x => x.year.Contains(tbSearchYear.Text)).
+                        Where<movies>(x => x.country.Contains(cmbxCounrty.Text)).ToList();
+                        zapis(mv);
+                    }
+                    else
+                    {
+                     mv = db.movies.
+                        Where<movies>(x => x.name.Contains(tbSearchName.Text)).
+                        Where<movies>(x => x.agerating == cmbxPageRating.Text).
+                        Where<movies>(x => x.genres.Contains(cmbxGenre.Text)).
+                        Where<movies>(x => x.director.Contains(tbSearchDirector.Text)).
+                        Where<movies>(x => x.country.Contains(cmbxCounrty.Text)).ToList();
+                        zapis(mv);
+                    }
+                }
+                else
+                {
+                    if (tbSearchYear.Text != "" && tbSearchYear.Text != null)
+                    {
+                         mv = db.movies.
+                        Where<movies>(x => x.name.Contains(tbSearchName.Text)).
+                        Where<movies>(x => x.genres.Contains(cmbxGenre.Text)).
+                        Where<movies>(x => x.year.Contains(tbSearchYear.Text)).
+                        Where<movies>(x => x.director.Contains(tbSearchDirector.Text)).
+                        Where<movies>(x => x.country.Contains(cmbxCounrty.Text)).ToList();
+                        zapis(mv);
+                }
+                    else
+                    {
+                     mv = db.movies.
+                        Where<movies>(x => x.name.Contains(tbSearchName.Text)).
+                        Where<movies>(x => x.genres.Contains(cmbxGenre.Text)).
+                        Where<movies>(x => x.director.Contains(tbSearchDirector.Text)).
+                        Where<movies>(x => x.country.Contains(cmbxCounrty.Text)).ToList();
+                        zapis(mv);
+                    }
+                }
+            //ListData dsf = new ListData();
+            //dsf.mv = mv;
+            //this.Close();
+        }
+        
+            private void zapis(List<movies> mv)
+        {
+            pp_dbEntities db = new pp_dbEntities();
+            var Movies = db.movies.OrderBy(c => c.name);
+            dataGridView1.DataSource = mv;
+            dataGridView1.Columns[0].HeaderText = "Название";
+            dataGridView1.Columns[1].HeaderText = "Количество";
+            dataGridView1.Columns[2].HeaderText = "Цена";
+            for (int i = 3; i <= 9; i++)
+                dataGridView1.Columns[i].Visible = false;
+            //
+            //asd.Refresh();
+        }
+        
+        private void cmbxGenre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+            if ((char.IsControl(e.KeyChar)))
+                return;
+            string Str = ((ComboBox)(sender)).Text.Substring(0, ((ComboBox)(sender)).SelectionStart) + e.KeyChar;
+            int Index = ((ComboBox)(sender)).FindStringExact(Str);
+            if (Index == -1)
+                Index = ((ComboBox)(sender)).FindString(Str);
+            ((ComboBox)sender).SelectedIndex = Index;
+            ((ComboBox)(sender)).SelectionStart = Str.Length;
+            ((ComboBox)(sender)).SelectionLength = ((ComboBox)(sender)).Text.Length - ((ComboBox)(sender)).SelectionStart;
+            e.Handled = true;
+        }
 
+        private void cmbxPageRating_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+            if ((char.IsControl(e.KeyChar)))
+                return;
+            string Str = ((ComboBox)(sender)).Text.Substring(0, ((ComboBox)(sender)).SelectionStart) + e.KeyChar;
+            int Index = ((ComboBox)(sender)).FindStringExact(Str);
+            if (Index == -1)
+                Index = ((ComboBox)(sender)).FindString(Str);
+            ((ComboBox)sender).SelectedIndex = Index;
+            ((ComboBox)(sender)).SelectionStart = Str.Length;
+            ((ComboBox)(sender)).SelectionLength = ((ComboBox)(sender)).Text.Length - ((ComboBox)(sender)).SelectionStart;
+            e.Handled = true;
+        }
 
+        private void cmbxCounrty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+            if ((char.IsControl(e.KeyChar)))
+                return;
+            string Str = ((ComboBox)(sender)).Text.Substring(0, ((ComboBox)(sender)).SelectionStart) + e.KeyChar;
+            int Index = ((ComboBox)(sender)).FindStringExact(Str);
+            if (Index == -1)
+                Index = ((ComboBox)(sender)).FindString(Str);
+            ((ComboBox)sender).SelectedIndex = Index;
+            ((ComboBox)(sender)).SelectionStart = Str.Length;
+            ((ComboBox)(sender)).SelectionLength = ((ComboBox)(sender)).Text.Length - ((ComboBox)(sender)).SelectionStart;
+            e.Handled = true;
+        }
 
-                if (dtPicFilter.Value.Year == 1753 && dtPicFilter.Value.Month == 01 && dtPicFilter.Value.Day == 01)
-            {
-                var PicFilter = db.Pictures.Include("Authors").Where(x => x.Name.Contains(tbPicFilter.Text)).Where(x => x.Authors.Name.Contains(tbPicFilter2.Text)).Where(x => x.Status.Status.Contains(cbPicFilter.Text)).ToList();
-                dGVPicturesList.DataSource = PicFilter;
-            }
-            else
-            {
-                var PicFilter = db.Pictures.Include("Authors").Where(x => x.Name.Contains(tbPicFilter.Text)).Where(x => x.Authors.Name.Contains(tbPicFilter2.Text)).Where(x => x.Status.Status.Contains(cbPicFilter.Text)).Where(x => x.Year.Year <= dtPicFilter.Value.Year).ToList();
-                dGVPicturesList.DataSource = PicFilter;
-            }
-            */
+        private void cmbxGenre_Click(object sender, EventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+        }
+
+        private void cmbxPageRating_Click(object sender, EventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
+        }
+
+        private void cmbxCounrty_Click(object sender, EventArgs e)
+        {
+            ((ComboBox)(sender)).DroppedDown = true;
         }
     }
 }

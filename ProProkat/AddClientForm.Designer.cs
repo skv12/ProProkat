@@ -131,7 +131,7 @@
             this.Controls.Add(this.lblSynopsis);
             this.Controls.Add(this.lblNameDisk);
             this.Name = "AddClientForm";
-            this.Text = "AddClientForm";
+            this.Text = "Добавление клиента";
             this.Load += new System.EventHandler(this.AddClientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

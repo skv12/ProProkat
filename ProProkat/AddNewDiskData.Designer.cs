@@ -39,7 +39,7 @@
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(12, 288);
+            this.lblData.Location = new System.Drawing.Point(12, 291);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(37, 13);
             this.lblData.TabIndex = 27;
@@ -47,16 +47,16 @@
             // 
             // txtboxData
             // 
-            this.txtboxData.Location = new System.Drawing.Point(133, 285);
+            this.txtboxData.Location = new System.Drawing.Point(133, 288);
             this.txtboxData.Name = "txtboxData";
             this.txtboxData.Size = new System.Drawing.Size(166, 20);
             this.txtboxData.TabIndex = 26;
             // 
             // btnAddData
             // 
-            this.btnAddData.Location = new System.Drawing.Point(133, 308);
+            this.btnAddData.Location = new System.Drawing.Point(224, 328);
             this.btnAddData.Name = "btnAddData";
-            this.btnAddData.Size = new System.Drawing.Size(166, 45);
+            this.btnAddData.Size = new System.Drawing.Size(75, 25);
             this.btnAddData.TabIndex = 28;
             this.btnAddData.Text = "Добавить ";
             this.btnAddData.UseVisualStyleBackColor = true;

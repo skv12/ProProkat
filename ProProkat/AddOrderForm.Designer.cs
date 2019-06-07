@@ -53,6 +53,7 @@
             this.lblRent = new System.Windows.Forms.Label();
             this.lbldsk = new System.Windows.Forms.Label();
             this.lbldsklst = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbxClient
@@ -207,10 +208,10 @@
             // lblcontact
             // 
             this.lblcontact.AutoSize = true;
-            this.lblcontact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblcontact.Location = new System.Drawing.Point(433, 332);
+            this.lblcontact.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblcontact.Location = new System.Drawing.Point(400, 327);
             this.lblcontact.Name = "lblcontact";
-            this.lblcontact.Size = new System.Drawing.Size(0, 16);
+            this.lblcontact.Size = new System.Drawing.Size(0, 13);
             this.lblcontact.TabIndex = 16;
             // 
             // lblbl
@@ -225,10 +226,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(277, 329);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 16);
+            this.label7.Size = new System.Drawing.Size(117, 13);
             this.label7.TabIndex = 18;
             this.label7.Text = "Контактный телефон:";
             // 
@@ -269,10 +270,10 @@
             // lbldsk
             // 
             this.lbldsk.AutoSize = true;
-            this.lbldsk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbldsk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbldsk.Location = new System.Drawing.Point(475, 392);
             this.lbldsk.Name = "lbldsk";
-            this.lbldsk.Size = new System.Drawing.Size(169, 20);
+            this.lbldsk.Size = new System.Drawing.Size(110, 13);
             this.lbldsk.TabIndex = 23;
             this.lbldsk.Text = "Введите количество";
             this.lbldsk.Visible = false;
@@ -280,17 +281,26 @@
             // lbldsklst
             // 
             this.lbldsklst.AutoSize = true;
-            this.lbldsklst.Location = new System.Drawing.Point(674, 327);
+            this.lbldsklst.Location = new System.Drawing.Point(673, 366);
             this.lbldsklst.Name = "lbldsklst";
-            this.lbldsklst.Size = new System.Drawing.Size(86, 13);
+            this.lbldsklst.Size = new System.Drawing.Size(0, 13);
             this.lbldsklst.TabIndex = 24;
-            this.lbldsklst.Text = "Список дисков:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(673, 332);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 13);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Список дисков:";
             // 
             // AddOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 560);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.lbldsklst);
             this.Controls.Add(this.lbldsk);
             this.Controls.Add(this.lblRent);
@@ -317,7 +327,7 @@
             this.Controls.Add(this.chkNewClient);
             this.Controls.Add(this.cmbxClient);
             this.Name = "AddOrderForm";
-            this.Text = "AddOrderForm";
+            this.Text = "Добавление заказа";
             this.Activated += new System.EventHandler(this.AddOrderForm_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddOrderForm_FormClosed);
             this.Load += new System.EventHandler(this.AddOrderForm_Load);
@@ -353,5 +363,6 @@
         private System.Windows.Forms.Label lblRent;
         private System.Windows.Forms.Label lbldsk;
         private System.Windows.Forms.Label lbldsklst;
+        private System.Windows.Forms.Label label9;
     }
 }
