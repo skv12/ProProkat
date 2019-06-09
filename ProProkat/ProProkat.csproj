@@ -126,6 +126,12 @@
     <Compile Include="country.cs">
       <DependentUpon>pp_model.tt</DependentUpon>
     </Compile>
+    <Compile Include="CreateDBForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateDBForm.Designer.cs">
+      <DependentUpon>CreateDBForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientsSubForm.resx">
       <DependentUpon>ClientsSubForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateDBForm.resx">
+      <DependentUpon>CreateDBForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateReportForm.resx">
       <DependentUpon>CreateReportForm.cs</DependentUpon>

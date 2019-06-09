@@ -1,8 +1,10 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace ProProkat
 {
@@ -16,7 +18,15 @@ namespace ProProkat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            if (File.Exists("ConnectFile.txt"))
+            {
+                Application.Run(new MainForm());
+            }
+            else
+            {
+                Application.Run(new CreateDBForm());
+                Application.Run(new MainForm());
+            }
         }
     }
 }

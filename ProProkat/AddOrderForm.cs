@@ -40,7 +40,10 @@ namespace ProProkat
             cmbxClient.DataSource = db.clients.OrderBy(c => c.fullname).ToList<clients>();
             cmbxClient.ValueMember = "Id";
             cmbxClient.DisplayMember = "fullname";
-            clientcheck();
+            if(cmbxClient.Items == null)
+            { 
+                clientcheck();
+            }
 
             cmbxDisk.DataSource = db.movies.OrderBy(c => c.name).ToList<movies>();
             cmbxDisk.ValueMember = "Id";
@@ -246,9 +249,12 @@ namespace ProProkat
             fillchkbox();
             chkNewClient.Checked = false;
             pp_dbEntities db = new pp_dbEntities();
-            int intIdt = db.clients.Max(u => u.id);  //Поиск клиента с наибольшим ID
-            clients cl = db.clients.Where(c => c.id == intIdt).FirstOrDefault();
-            cmbxClient.Text = cl.fullname.ToString();
+            /*if (db.clients.Max(u => u.id) )
+            {*/
+                int intIdt = db.clients.Max(u => u.id);  //Поиск клиента с наибольшим ID
+                clients cl = db.clients.Where(c => c.id == intIdt).FirstOrDefault();
+                cmbxClient.Text = cl.fullname.ToString();
+           // }
         }
 
         private void cmbxDisk_SelectedIndexChanged(object sender, EventArgs e) //Показывает кол-во доступных дисков в label'ах, при выборе из combobox'а.
