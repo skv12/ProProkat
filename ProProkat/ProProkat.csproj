@@ -105,15 +105,6 @@
     <Compile Include="agerating.cs">
       <DependentUpon>pp_model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class\Actors.cs" />
-    <Compile Include="Class\CD.cs" />
-    <Compile Include="Class\Clients.cs" />
-    <Compile Include="Class\Country.cs" />
-    <Compile Include="Class\Director.cs" />
-    <Compile Include="Class\Genres.cs" />
-    <Compile Include="Class\Movies.cs" />
-    <Compile Include="Class\Orders.cs" />
-    <Compile Include="Class\Scenarist.cs" />
     <Compile Include="clients.cs">
       <DependentUpon>pp_model.tt</DependentUpon>
     </Compile>
@@ -138,7 +129,6 @@
     <Compile Include="CreateReportForm.Designer.cs">
       <DependentUpon>CreateReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DbConfiguration.cs" />
     <Compile Include="DiskSearch.cs">
       <SubType>Form</SubType>
     </Compile>

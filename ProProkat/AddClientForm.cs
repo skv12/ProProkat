@@ -72,6 +72,10 @@ namespace ProProkat
                     this.Close();
                 else
                 {
+                    txtboxAddress.Text = null;
+                    txtBoxname.Text = null; 
+                    txtboxphone.Text = null;
+                    chkbxBL.Checked = false;
                     MessageBox.Show("Клиент добавлен");
                 }
             }

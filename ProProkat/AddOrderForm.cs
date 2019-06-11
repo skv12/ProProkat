@@ -249,12 +249,16 @@ namespace ProProkat
             fillchkbox();
             chkNewClient.Checked = false;
             pp_dbEntities db = new pp_dbEntities();
-            /*if (db.clients.Max(u => u.id) )
-            {*/
+            try
+            {
                 int intIdt = db.clients.Max(u => u.id);  //Поиск клиента с наибольшим ID
                 clients cl = db.clients.Where(c => c.id == intIdt).FirstOrDefault();
                 cmbxClient.Text = cl.fullname.ToString();
-           // }
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
 
         private void cmbxDisk_SelectedIndexChanged(object sender, EventArgs e) //Показывает кол-во доступных дисков в label'ах, при выборе из combobox'а.
