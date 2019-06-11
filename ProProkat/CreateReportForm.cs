@@ -18,7 +18,6 @@ namespace ProProkat
         {
             InitializeComponent();
         }
-        Stream mystream;
         private void btnCreateReport_Click(object sender, EventArgs e)
         {
             pp_dbEntities db = new pp_dbEntities();
