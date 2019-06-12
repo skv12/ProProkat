@@ -26,6 +26,8 @@ namespace ProProkat
             form_activated.FormBorderStyle = 0;
             form_activated.TopLevel = false;
             form_activated.Dock = DockStyle.Fill;
+            form_activated.lblBL.Visible = false;
+            form_activated.chkbxBL.Visible = false;
             this.panel.Controls.Add(form_activated);
             form_activated.chkModal = true;
             form_activated.Show();

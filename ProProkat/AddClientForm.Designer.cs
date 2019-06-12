@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDirector = new System.Windows.Forms.Label();
-            this.lblGenre = new System.Windows.Forms.Label();
-            this.lblSynopsis = new System.Windows.Forms.Label();
-            this.lblNameDisk = new System.Windows.Forms.Label();
+            this.lblBL = new System.Windows.Forms.Label();
+            this.lblContact = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.chkbxBL = new System.Windows.Forms.CheckBox();
             this.txtBoxname = new System.Windows.Forms.TextBox();
             this.txtboxphone = new System.Windows.Forms.TextBox();
@@ -39,41 +39,41 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblDirector
+            // lblBL
             // 
-            this.lblDirector.AutoSize = true;
-            this.lblDirector.Location = new System.Drawing.Point(26, 169);
-            this.lblDirector.Name = "lblDirector";
-            this.lblDirector.Size = new System.Drawing.Size(59, 13);
-            this.lblDirector.TabIndex = 14;
-            this.lblDirector.Text = "Статус ЧС";
+            this.lblBL.AutoSize = true;
+            this.lblBL.Location = new System.Drawing.Point(26, 169);
+            this.lblBL.Name = "lblBL";
+            this.lblBL.Size = new System.Drawing.Size(59, 13);
+            this.lblBL.TabIndex = 14;
+            this.lblBL.Text = "Статус ЧС";
             // 
-            // lblGenre
+            // lblContact
             // 
-            this.lblGenre.AutoSize = true;
-            this.lblGenre.Location = new System.Drawing.Point(26, 127);
-            this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(114, 13);
-            this.lblGenre.TabIndex = 13;
-            this.lblGenre.Text = "Контактный телефон";
+            this.lblContact.AutoSize = true;
+            this.lblContact.Location = new System.Drawing.Point(26, 127);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(114, 13);
+            this.lblContact.TabIndex = 13;
+            this.lblContact.Text = "Контактный телефон";
             // 
-            // lblSynopsis
+            // lblAddress
             // 
-            this.lblSynopsis.AutoSize = true;
-            this.lblSynopsis.Location = new System.Drawing.Point(26, 82);
-            this.lblSynopsis.Name = "lblSynopsis";
-            this.lblSynopsis.Size = new System.Drawing.Size(38, 13);
-            this.lblSynopsis.TabIndex = 12;
-            this.lblSynopsis.Text = "Адрес";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(26, 82);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(38, 13);
+            this.lblAddress.TabIndex = 12;
+            this.lblAddress.Text = "Адрес";
             // 
-            // lblNameDisk
+            // lblName
             // 
-            this.lblNameDisk.AutoSize = true;
-            this.lblNameDisk.Location = new System.Drawing.Point(26, 36);
-            this.lblNameDisk.Name = "lblNameDisk";
-            this.lblNameDisk.Size = new System.Drawing.Size(34, 13);
-            this.lblNameDisk.TabIndex = 11;
-            this.lblNameDisk.Text = "ФИО";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(26, 36);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(34, 13);
+            this.lblName.TabIndex = 11;
+            this.lblName.Text = "ФИО";
             // 
             // chkbxBL
             // 
@@ -126,10 +126,10 @@
             this.Controls.Add(this.txtboxphone);
             this.Controls.Add(this.txtBoxname);
             this.Controls.Add(this.chkbxBL);
-            this.Controls.Add(this.lblDirector);
-            this.Controls.Add(this.lblGenre);
-            this.Controls.Add(this.lblSynopsis);
-            this.Controls.Add(this.lblNameDisk);
+            this.Controls.Add(this.lblBL);
+            this.Controls.Add(this.lblContact);
+            this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.lblName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AddClientForm";
@@ -142,10 +142,10 @@
 
         #endregion
 
-        public System.Windows.Forms.Label lblDirector;
-        public System.Windows.Forms.Label lblGenre;
-        public System.Windows.Forms.Label lblSynopsis;
-        public System.Windows.Forms.Label lblNameDisk;
+        public System.Windows.Forms.Label lblBL;
+        public System.Windows.Forms.Label lblContact;
+        public System.Windows.Forms.Label lblAddress;
+        public System.Windows.Forms.Label lblName;
         public System.Windows.Forms.CheckBox chkbxBL;
         public System.Windows.Forms.TextBox txtBoxname;
         public System.Windows.Forms.TextBox txtboxphone;

@@ -31,7 +31,9 @@ namespace ProProkat
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            add_form = new AddClientForm();
+            AddClientForm add_form = new AddClientForm();
+            add_form.lblBL.Visible = false;
+            add_form.chkbxBL.Visible = false;
             add_form.ShowDialog();
             zapis();
         }
