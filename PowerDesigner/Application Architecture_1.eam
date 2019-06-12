@@ -1102,7 +1102,7 @@ DefaultChar=
 Script=
 ConvTable=
 ConvTablePath=%_HOME%\Resource Files\Conversion Tables</a:ModelOptionsText>
-<a:RepositoryFilename>C:\Users\Борис\Downloads\ProProkat-master (1)\ProProkat-master\PD\Application Architecture_1.eam</a:RepositoryFilename>
+<a:RepositoryFilename>C:\Users\kiesi\Downloads\ProProkat-master (3)\ProProkat-master\PowerDesigner\Application Architecture_1.eam</a:RepositoryFilename>
 <c:DefaultDiagram>
 <o:ApplicationArchitectureDiagram Ref="o3"/>
 </c:DefaultDiagram>
@@ -2850,8 +2850,8 @@ Shadow=0</a:DisplayPreferences>
 <o:ApplicationLinkSymbol Id="o42">
 <a:CreationDate>1552288524</a:CreationDate>
 <a:ModificationDate>1560083097</a:ModificationDate>
-<a:Rect>((22931,3937), (24181,23354))</a:Rect>
-<a:ListOfPoints>((23556,4337),(23556,22954))</a:ListOfPoints>
+<a:Rect>((22927,3933), (24177,23354))</a:Rect>
+<a:ListOfPoints>((23552,4333),(23552,22954))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>1</a:ArrowStyle>
 <a:LineColor>8540968</a:LineColor>
@@ -2988,7 +2988,7 @@ ETYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>0C297BFB-52E4-464B-B7D9-A81E54A4C9C2</a:CustomPictureID>
+<a:CustomPictureID>8A06FD0B-5C61-411B-A195-19D1DFA8492D</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3030,7 +3030,7 @@ DATY 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>34</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>C89F2A1E-83E3-428A-BCDE-B00CFB0CB529</a:CustomPictureID>
+<a:CustomPictureID>4D28A336-ED8A-42C8-BDC4-EFDA4E81CBEC</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3059,7 +3059,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3083,7 +3083,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3107,7 +3107,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3131,7 +3131,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3155,7 +3155,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3179,7 +3179,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3203,7 +3203,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3227,7 +3227,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3251,7 +3251,7 @@ PROL 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>1030</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>7141A428-468A-4AA5-B4F1-B1D4ACF9C603</a:CustomPictureID>
+<a:CustomPictureID>DA24B579-CDA1-4852-9AB5-264B0345ECD0</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3275,7 +3275,7 @@ PROL 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>1030</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>7141A428-468A-4AA5-B4F1-B1D4ACF9C603</a:CustomPictureID>
+<a:CustomPictureID>DA24B579-CDA1-4852-9AB5-264B0345ECD0</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3287,7 +3287,7 @@ PROL 0 Arial Unicode MS,8,N</a:FontList>
 <a:ModificationDate>1560083097</a:ModificationDate>
 <a:IconMode>2</a:IconMode>
 <a:EmptyAreaSize>(2400, 2400)</a:EmptyAreaSize>
-<a:Rect>((21042,1937), (25842,6737))</a:Rect>
+<a:Rect>((21038,1933), (25838,6733))</a:Rect>
 <a:LineColor>3116079</a:LineColor>
 <a:FillColor>12779202</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -3299,7 +3299,7 @@ PROL 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>1030</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>7141A428-468A-4AA5-B4F1-B1D4ACF9C603</a:CustomPictureID>
+<a:CustomPictureID>DA24B579-CDA1-4852-9AB5-264B0345ECD0</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3323,7 +3323,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3347,7 +3347,7 @@ PROL 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>1030</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>7141A428-468A-4AA5-B4F1-B1D4ACF9C603</a:CustomPictureID>
+<a:CustomPictureID>DA24B579-CDA1-4852-9AB5-264B0345ECD0</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3371,7 +3371,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3395,7 +3395,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>
@@ -3419,7 +3419,7 @@ FTYP 0 Arial Unicode MS,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:CustomPictureType>3</a:CustomPictureType>
 <a:CustomTextMode>1</a:CustomTextMode>
-<a:CustomPictureID>9A53BABD-C813-4226-8F0E-2D54FDF440EC</a:CustomPictureID>
+<a:CustomPictureID>37074520-BBC2-4A6C-9295-C6C5788E80CE</a:CustomPictureID>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <a:KeepAspect>1</a:KeepAspect>
 <c:Object>

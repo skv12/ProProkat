@@ -5,7 +5,7 @@
 <Workspace>
 	<Local Expanded="Yes">
 		<Model Expanded="Yes" ID="{E73657F5-2C88-4B67-9CB5-CE6BDFF6E6A8}" Name="Papi4_UML" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Papi4_UML (2).oom"/>
-		<Model ID="{BF5A44D3-A0D0-4E17-B93D-99197CB988B9}" Name="Application Architecture_1" Type="{5215C79E-A9A1-4738-A627-36DA432EFE29}" URL="Application Architecture_1.eam"/>
+		<Model ID="{BF5A44D3-A0D0-4E17-B93D-99197CB988B9}" Name="Application Architecture_1" Selected="Yes" Type="{5215C79E-A9A1-4738-A627-36DA432EFE29}" URL="Application Architecture_1.eam"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
