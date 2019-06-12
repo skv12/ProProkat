@@ -356,11 +356,6 @@ namespace ProProkat
             
         }
 
-        private void AddOrderForm_Load(object sender, EventArgs e) // Бесполезный кусок кода.
-        {
-            btnAddOrder.Name = "Закрыть заказ";
-        }
-
         private void txtboxDiskCount_KeyPress(object sender, KeyPressEventArgs e) // Ограничения ввода в текстобокс(только числа)
         {
             char number = e.KeyChar;

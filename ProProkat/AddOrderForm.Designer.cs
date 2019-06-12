@@ -355,7 +355,6 @@
             this.Text = "Добавление заказа";
             this.Activated += new System.EventHandler(this.AddOrderForm_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddOrderForm_FormClosed);
-            this.Load += new System.EventHandler(this.AddOrderForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

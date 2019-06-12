@@ -36,11 +36,6 @@ namespace ProProkat
             zapis();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             pp_dbEntities db = new pp_dbEntities();
@@ -56,7 +51,6 @@ namespace ProProkat
             else
                 edit_form.chkbxBL.Checked = false;
 
-           
             edit_form.ShowDialog();
             zapis();
         }
