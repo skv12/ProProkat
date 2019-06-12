@@ -27,7 +27,6 @@ namespace ProProkat
             dataGridView1.Columns[3].HeaderText = "ЧС";
             dataGridView1.Columns[4].Visible = false; 
         }
-        private Form add_form;
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {

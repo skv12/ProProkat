@@ -41,11 +41,11 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(89, 190);
+            this.btnConnect.Location = new System.Drawing.Point(91, 199);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(106, 23);
             this.btnConnect.TabIndex = 0;
-            this.btnConnect.Text = "Создать";
+            this.btnConnect.Text = "Подключиться";
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
@@ -89,7 +89,7 @@
             // 
             this.txtboxServer.Location = new System.Drawing.Point(15, 47);
             this.txtboxServer.Name = "txtboxServer";
-            this.txtboxServer.Size = new System.Drawing.Size(180, 20);
+            this.txtboxServer.Size = new System.Drawing.Size(182, 20);
             this.txtboxServer.TabIndex = 5;
             this.txtboxServer.Text = "localhost";
             // 
@@ -97,7 +97,7 @@
             // 
             this.txtboxPort.Location = new System.Drawing.Point(15, 86);
             this.txtboxPort.Name = "txtboxPort";
-            this.txtboxPort.Size = new System.Drawing.Size(180, 20);
+            this.txtboxPort.Size = new System.Drawing.Size(182, 20);
             this.txtboxPort.TabIndex = 6;
             this.txtboxPort.Text = "3306";
             // 
@@ -105,7 +105,7 @@
             // 
             this.txtboxName.Location = new System.Drawing.Point(15, 125);
             this.txtboxName.Name = "txtboxName";
-            this.txtboxName.Size = new System.Drawing.Size(180, 20);
+            this.txtboxName.Size = new System.Drawing.Size(182, 20);
             this.txtboxName.TabIndex = 7;
             this.txtboxName.Text = "root";
             // 
@@ -113,7 +113,7 @@
             // 
             this.txtboxPassword.Location = new System.Drawing.Point(15, 164);
             this.txtboxPassword.Name = "txtboxPassword";
-            this.txtboxPassword.Size = new System.Drawing.Size(180, 20);
+            this.txtboxPassword.Size = new System.Drawing.Size(182, 20);
             this.txtboxPassword.TabIndex = 8;
             this.txtboxPassword.UseSystemPasswordChar = true;
             // 
@@ -134,7 +134,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "CreateDBForm";
-            this.Text = "Создание базы";
+            this.Text = "Подключение к базе";
             this.ResumeLayout(false);
             this.PerformLayout();
 

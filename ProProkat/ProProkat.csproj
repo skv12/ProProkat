@@ -245,6 +245,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="conn.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="pp_model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>pp_model.Context.cs</LastGenOutput>
