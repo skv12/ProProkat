@@ -23,10 +23,8 @@ namespace ProProkat
         private void CreateTables(MySqlConnection conn_)
         {
             MySqlCommand cmd;
-            string s1, s2, s3, s4, s5, s6, s7;
-            s7 = "DROP TABLE IF EXISTS `agerating`; DROP TABLE IF EXISTS `clients`; DROP TABLE IF EXISTS `country`; DROP TABLE IF EXISTS `genres`; DROP TABLE IF EXISTS `movies`; DROP TABLE IF EXISTS `orders`;";
-            cmd = new MySqlCommand(s7, conn_);
-            cmd.ExecuteNonQuery();
+            string s1, s2, s3, s4, s5, s6;
+            
 
             s1 = "CREATE TABLE `agerating` ( `id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(45) NOT NULL, PRIMARY KEY(`id`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci";
             cmd = new MySqlCommand(s1, conn_);
@@ -57,7 +55,7 @@ namespace ProProkat
         {
             try
             {
-                string s0;
+                string s0, s7;
                 string connStr = "server=" + txtboxServer.Text.ToString() + ";user=" + txtboxName.Text.ToString() + ";port=" + txtboxPort.Text.ToString() + ";password=" + txtboxPassword.Text.ToString() + ";";
                 MySqlCommand cmd;
                 MySqlConnection conn = new MySqlConnection(connStr);
@@ -81,6 +79,9 @@ namespace ProProkat
                     conn.Close();
 
                     conn_.Open();
+                    s7 = "DROP TABLE IF EXISTS `agerating`; DROP TABLE IF EXISTS `clients`; DROP TABLE IF EXISTS `country`; DROP TABLE IF EXISTS `genres`; DROP TABLE IF EXISTS `movies`; DROP TABLE IF EXISTS `orders`;";
+                    cmd = new MySqlCommand(s7, conn_);
+                    cmd.ExecuteNonQuery();
                     CreateTables(conn_);
                     conn_.Close();
                     MessageBox.Show("База создана", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
