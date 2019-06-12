@@ -218,7 +218,7 @@
             // 
             this.lblbl.AutoSize = true;
             this.lblbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblbl.Location = new System.Drawing.Point(475, 510);
+            this.lblbl.Location = new System.Drawing.Point(524, 473);
             this.lblbl.Name = "lblbl";
             this.lblbl.Size = new System.Drawing.Size(0, 20);
             this.lblbl.TabIndex = 17;
@@ -253,7 +253,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(40, 478);
+            this.lblTime.Location = new System.Drawing.Point(40, 481);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(40, 13);
             this.lblTime.TabIndex = 21;
@@ -299,7 +299,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 560);
+            this.ClientSize = new System.Drawing.Size(854, 525);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lbldsklst);
             this.Controls.Add(this.lbldsk);
@@ -326,6 +326,8 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.chkNewClient);
             this.Controls.Add(this.cmbxClient);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AddOrderForm";
             this.Text = "Добавление заказа";
             this.Activated += new System.EventHandler(this.AddOrderForm_Activated);

@@ -81,7 +81,7 @@
             this.chkbxBL.Location = new System.Drawing.Point(205, 169);
             this.chkbxBL.Name = "chkbxBL";
             this.chkbxBL.Size = new System.Drawing.Size(15, 14);
-            this.chkbxBL.TabIndex = 16;
+            this.chkbxBL.TabIndex = 5;
             this.chkbxBL.UseVisualStyleBackColor = true;
             // 
             // txtBoxname
@@ -89,28 +89,28 @@
             this.txtBoxname.Location = new System.Drawing.Point(205, 36);
             this.txtBoxname.Name = "txtBoxname";
             this.txtBoxname.Size = new System.Drawing.Size(349, 20);
-            this.txtBoxname.TabIndex = 17;
+            this.txtBoxname.TabIndex = 0;
             // 
             // txtboxphone
             // 
             this.txtboxphone.Location = new System.Drawing.Point(205, 124);
             this.txtboxphone.Name = "txtboxphone";
             this.txtboxphone.Size = new System.Drawing.Size(226, 20);
-            this.txtboxphone.TabIndex = 18;
+            this.txtboxphone.TabIndex = 2;
             // 
             // txtboxAddress
             // 
             this.txtboxAddress.Location = new System.Drawing.Point(205, 79);
             this.txtboxAddress.Name = "txtboxAddress";
             this.txtboxAddress.Size = new System.Drawing.Size(349, 20);
-            this.txtboxAddress.TabIndex = 19;
+            this.txtboxAddress.TabIndex = 1;
             // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(364, 214);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(190, 23);
-            this.btnAdd.TabIndex = 20;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 279);
+            this.ClientSize = new System.Drawing.Size(568, 250);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtboxAddress);
             this.Controls.Add(this.txtboxphone);
@@ -130,6 +130,8 @@
             this.Controls.Add(this.lblGenre);
             this.Controls.Add(this.lblSynopsis);
             this.Controls.Add(this.lblNameDisk);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AddClientForm";
             this.Text = "Добавление клиента";
             this.Load += new System.EventHandler(this.AddClientForm_Load);

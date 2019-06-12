@@ -47,11 +47,18 @@ namespace ProProkat
         private void btnRemoveDisk_Click(object sender, EventArgs e)
         {
             pp_dbEntities db = new pp_dbEntities();
-            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[9].Value.ToString());
-            movies delete_item = db.movies.Find(id);
-            db.movies.Remove(delete_item);
-            db.SaveChanges();
-            zapis();
+            try
+            {
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[9].Value.ToString());
+                movies delete_item = db.movies.Find(id);
+                db.movies.Remove(delete_item);
+                db.SaveChanges();
+                zapis();
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
 
         private void DisksSubForm_Load(object sender, EventArgs e)

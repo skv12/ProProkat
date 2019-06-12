@@ -64,11 +64,18 @@ namespace ProProkat
         private void btnRemoveClient_Click(object sender, EventArgs e)
         {
             pp_dbEntities db = new pp_dbEntities();
-            int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
-            clients delete_item = db.clients.Find(id);
-            db.clients.Remove(delete_item);
-            db.SaveChanges();
-            zapis();
+            try
+            {
+                int id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
+                clients delete_item = db.clients.Find(id);
+                db.clients.Remove(delete_item);
+                db.SaveChanges();
+                zapis();
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
         }
     }
 }
