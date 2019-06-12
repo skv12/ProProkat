@@ -28,7 +28,6 @@ namespace ProProkat
             dataGridView1.Columns[1].HeaderText = "Статус";
             dataGridView1.Columns[2].HeaderText = "Дата заказа";
             dataGridView1.Columns[3].HeaderText = "Срок";
-            //dataGridView1.Columns[1].Visible = false;
             for (int i = 4; i <= 8; i++)
                 dataGridView1.Columns[i].Visible = false;
 
@@ -50,7 +49,6 @@ namespace ProProkat
                         dataGridView1.Rows[i].Visible = true;
                     }
                 }
-            //for (int i = 4; i <= 5; i++) { dataGridView1.Columns[i].Visible = false; }
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -98,8 +96,9 @@ namespace ProProkat
         {
             pp_dbEntities db = new pp_dbEntities();
             int ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[6].Value.ToString());
+            int CLID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[8].Value.ToString());
             orders or = db.orders.Find(ID);
-
+            clients cl = db.clients.Where(c => c.id == CLID).FirstOrDefault();
 
 
 
@@ -132,6 +131,8 @@ namespace ProProkat
 
             OrderCloseForm close_form = new OrderCloseForm();
             close_form.lblcl.Text = or.client.ToString();
+            close_form.lblContact.Text = cl.contact.ToString();
+            close_form.lblAddress.Text = cl.address.ToString();
             close_form.lbldsk.Text = dl.ToString();
             close_form.lbldeposit.Text = or.deposit.ToString();
             close_form.lblrent.Text = or.rent.ToString();

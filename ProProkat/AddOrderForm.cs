@@ -72,7 +72,7 @@ namespace ProProkat
             int ID = Convert.ToInt32(cmbxClient.SelectedValue.ToString());
             clients cl = db.clients.Where(c => c.id == ID).FirstOrDefault();
             lblcontact.Text = cl.contact.ToString();
-
+            lblAddress.Text = cl.address.ToString();
             if (cl.blackliststatus == 1)
             {
                 if (txtboxRent.Text != "")

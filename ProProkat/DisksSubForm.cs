@@ -88,26 +88,6 @@ namespace ProProkat
         }
         private void btnSearchDisk_Click(object sender, EventArgs e)
         {
-
-            //Form search_form = new DiskSearch();
-            //search_form.ShowDialog();
-            //zapis();
-
-
-
-            /*
-            ListData ds = new ListData();
-            List<movies> mv = ds.mv;
-            pp_dbEntities db = new pp_dbEntities();
-            var Movies = db.movies.OrderBy(c => c.name);
-            dataGridView1.DataSource = mv;
-            dataGridView1.Columns[0].HeaderText = "Название";
-            dataGridView1.Columns[1].HeaderText = "Количество";
-            dataGridView1.Columns[2].HeaderText = "Цена";
-            for (int i = 3; i <= 9; i++)
-                dataGridView1.Columns[i].Visible = false;
-            */
-
             label1.Visible = true;
             label2.Visible = true;
             label3.Visible = true;
