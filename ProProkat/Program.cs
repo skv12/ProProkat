@@ -28,6 +28,11 @@ namespace ProProkat
                 MySqlConnection conn = new MySqlConnection(connStr);
                 conn.Open();
                 conn.Close();
+
+                MySqlConnection conn_ = new MySqlConnection(connStr + "database=pp_db");
+                conn_.Open();
+                conn_.Close();
+
                 Application.Run(new MainForm());
                  
             }
