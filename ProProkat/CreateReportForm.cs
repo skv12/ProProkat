@@ -24,6 +24,7 @@ namespace ProProkat
             var query_closed = db.orders.Where<orders>(f => f.closed_date >= dateTimePickerFrom.Value).Where<orders>(t => t.closed_date <= dateTimePickerTo.Value).Where<orders>(s => s.status == "0");
             var query_active = db.orders.Where<orders>(t => t.date <= dateTimePickerTo.Value).Where<orders>(s => s.status == "1");
             var query_expired = db.orders.Where<orders>(s => s.status == "2");
+            var query_failed = db.orders.Where<orders>(s => s.status == "3");
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.CreatePrompt = false;
             saveFileDialog.OverwritePrompt = false;
@@ -137,6 +138,39 @@ namespace ProProkat
                 expired_sheet.Cells[cellRow + 1, 1] = "Итого просрочено";
                 expired_sheet.Cells[cellRow + 2, 1] = cellRow - 3;
                 fit_cells = expired_sheet.UsedRange;
+                fit_cells.EntireColumn.AutoFit();
+                fit_cells.EntireRow.AutoFit();
+                fit_cells.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                fit_cells.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                //Лист проваленных заказов
+                Excel.Worksheet failed_sheet = null;
+                failed_sheet = (Excel.Worksheet)workbook.Worksheets.Add();
+                failed_sheet = workbook.ActiveSheet;
+                failed_sheet.Name = "Проваленные заказы";
+                failed_sheet.Cells[1, 1] = "Проваленные заказы";
+                failed_sheet.Range[failed_sheet.Cells[1, 1], failed_sheet.Cells[1, 4]].Merge();
+                failed_sheet.Cells[2, 1] = "ID заказа";
+                failed_sheet.Cells[2, 2] = "Клиент";
+                failed_sheet.Cells[2, 3] = "Дата открытия";
+                failed_sheet.Cells[2, 4] = "Дата провала";
+                cellRange = (Excel.Range)failed_sheet.Cells[1, 1];
+                rowRange = cellRange.EntireRow;
+                colRange = cellRange.EntireColumn;
+
+                cellRow = 3;
+                foreach (var orders in query_failed)
+                {
+                    failed_sheet.Cells[cellRow, 1] = orders.id.ToString();
+                    failed_sheet.Cells[cellRow, 2] = orders.client.ToString();
+                    failed_sheet.Cells[cellRow, 3] = orders.date.ToString();
+                    failed_sheet.Cells[cellRow, 4] = orders.closed_date.ToString();
+                    cellRow++;
+                }
+
+                failed_sheet.Cells[cellRow + 1, 1] = "Итого провалено";
+                failed_sheet.Cells[cellRow + 2, 1] = cellRow - 3;
+                fit_cells = failed_sheet.UsedRange;
                 fit_cells.EntireColumn.AutoFit();
                 fit_cells.EntireRow.AutoFit();
                 fit_cells.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
