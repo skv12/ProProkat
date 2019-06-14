@@ -12,7 +12,6 @@ namespace ProProkat
     static class Program
     {
         static public bool db = false;
-        static public string connStr = File.ReadAllText("conn.txt").ToString();
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -22,33 +21,30 @@ namespace ProProkat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
+            string connStr = File.ReadAllText("conn.txt").ToString();
             try
             {
-                MySqlConnection conn = new MySqlConnection(connStr);
-                conn.Open();
-                conn.Close();
-
-                MySqlConnection conn_ = new MySqlConnection(connStr + "database=pp_db");
-                conn_.Open();
-                conn_.Close();
-
-                Application.Run(new MainForm());
-                 
-            }
-            catch(Exception ex)
-            {
-                if (ex != null)
+                try
+                {
+                    MySqlConnection conn = new MySqlConnection(connStr);
+                    conn.Open();
+                    conn.Close();
+                    MySqlConnection conn_ = new MySqlConnection(connStr + "database=pp_db");
+                    conn_.Open();
+                    conn_.Close();
+                }
+                catch (Exception ex)
                 {
                     Application.Run(new CreateDBForm());
-                    if (db)
-                    {
-                        Application.Run(new MainForm());
-                    }
-                    else
-                        return;
                 }
 
+                connStr = "";
+                Application.Run(new MainForm());
+                return;
+            }
+            catch (Exception ex)
+            {
+                return;
             }
         }
     }
